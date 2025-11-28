@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mallu Finance - Your Financial Partner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Mallu Finance</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Welcome to Mallu Finance</h1>
+        <p>Your Trusted Partner for All Financial Services,We didnt provide any services like loan or credit cards,we only link you with banks</p>
+        <button class="cta-button" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Apply Now</button>
+    </section>
+
+    <section class="services" id="services">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <div class="service-icon">🏦</div>
+                <h3>Loans</h3>
+                <p>Get the best personal, home, and business loans from top banks with competitive interest rates and flexible terms.</p>
+                <button class="learn-more">Apply now</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💳</div>
+                <h3>Credit Cards</h3>
+                <p>Compare and apply for credit cards with amazing cashback offers, rewards, and exclusive benefits.</p>
+                <button class="learn-more">Apply now</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📈</div>
+                <h3>Demat Accounts</h3>
+                <p>Open your demat account and start investing in stocks, mutual funds, and securities with ease.</p>
+                <button class="learn-more">Apply now</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💰</div>
+                <h3>Pay Later Services</h3>
+                <p>Shop now and pay later with our trusted BNPL partners. No hidden charges, instant approval.</p>
+                <button class="learn-more">Apply now</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🏠</div>
+                <h3>Home Loans</h3>
+                <p>Make your dream home a reality with our low-interest home loans and quick approval process.</p>
+                <button class="learn-more">Apply now</button>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🚗</div>
+                <h3>Vehicle Loans</h3>
+                <p>Drive your dream car or bike with our attractive vehicle loan options from leading banks.</p>
+                <button class="learn-more">Apply now</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="features-container">
+            <h2>Why Choose Mallu Online?</h2>
+            <div class="feature-list">
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-content">
+                        <h3>Trusted Partners</h3>
+                        <p>We work with all major banks and financial institutions in India</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-content">
+                        <h3>Quick Approval</h3>
+                        <p>Get instant approvals and fast processing for all your applications</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-content">
+                        <h3>Best Rates</h3>
+                        <p>Compare and choose from the most competitive rates in the market</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-content">
+                        <h3>Expert Guidance</h3>
+                        <p>Our financial experts guide you through every step of the process</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-content">
+                        <h3>100% Free Service</h3>
+                        <p>No hidden charges. Our consultation and assistance is completely free</p>
+                    </div>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-content">
+                        <h3>Paperless Process</h3>
+                        <p>Apply online with minimal documentation and paperwork</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Get in Touch</h2>
+        <p style="margin-bottom: 2rem; color: #666;">Fill out the form below and our team will get back to you within 24 hours</p>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <input type="tel" placeholder="Phone Number" required>
+            <select required>
+                <option value="">Select Service</option>
+                <option value="loan">Bank Loan</option>
+                <option value="credit">Credit Card</option>
+                <option value="demat">Demat Account</option>
+                <option value="paylater">Pay Later</option>
+                <option value="other">Other</option>
+            </select>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="submit-button">Submit Application</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Mallu Online. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Your trusted financial services partner</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
