@@ -52,13 +52,13 @@
         <!-- Scrollable Links -->
         <div class="flex flex-col p-6 space-y-4 overflow-y-auto flex-1">
             <a href="index.html#home" class="mobile-link text-lg font-medium text-slate-700 hover:text-brand-primary py-2 border-b border-slate-50">Home</a>
+            <a href="careers.html" class="mobile-link text-lg font-medium text-brand-primary py-2 border-b border-slate-50">Careers</a>
+            <a href="index.html#contact" class="mobile-link text-lg font-medium text-slate-700 hover:text-brand-primary py-2 border-b border-slate-50">Contact</a>
             <a href="index.html#services" class="mobile-link text-lg font-medium text-slate-700 hover:text-brand-primary py-2 border-b border-slate-50">Services</a>
             <a href="whatsnew.html" class="mobile-link text-lg font-medium text-slate-700 hover:text-brand-primary py-2 border-b border-slate-50">What's New</a>
-            <a href="https://www.themallu.online" class="mobile-link text-lg font-medium text-slate-700 hover:text-brand-primary py-2 border-b border-slate-50">Updates</a>
-            <a href="careers.html" class="mobile-link text-lg font-medium text-brand-primary py-2 border-b border-slate-50">Careers</a>
             <a href="index.html#calculator" class="mobile-link text-lg font-medium text-slate-700 hover:text-brand-primary py-2 border-b border-slate-50">Calculator</a>
             <a href="index.html#features" class="mobile-link text-lg font-medium text-slate-700 hover:text-brand-primary py-2 border-b border-slate-50">Features</a>
-            <a href="index.html#contact" class="mobile-link text-lg font-medium text-slate-700 hover:text-brand-primary py-2 border-b border-slate-50">Contact</a>
+            <a href="https://www.themallu.online" class="mobile-link text-lg font-medium text-slate-700 hover:text-brand-primary py-2 border-b border-slate-50">Updates</a>
             <a href="https://wee.bnking.in/c/ZmZlYTAyN" target="_blank" 
                class="apply-link mt-4 w-full text-center bg-brand-primary text-white py-4 rounded-xl text-lg font-bold shadow-lg hover:bg-blue-700 transition-colors shrink-0">
                 Apply Now
@@ -67,7 +67,7 @@
 
         <!-- Version Footer -->
         <div class="p-4 border-t border-slate-100 bg-slate-50 text-center shrink-0">
-            <p class="text-slate-400 text-sm font-medium tracking-widest">Version V.1.2</p>
+            <p class="text-slate-400 text-sm font-medium tracking-widest">Version V.1.8</p>
         </div>
     </div>
 
@@ -87,10 +87,36 @@
             <!-- Desktop Menu -->
             <ul class="hidden md:flex items-center gap-8 font-medium text-slate-600">
                 <li><a href="index.html#home" class="hover:text-brand-primary transition-colors">Home</a></li>
-                <li><a href="index.html#services" class="hover:text-brand-primary transition-colors">Services</a></li>
-                <li><a href="whatsnew.html" class="hover:text-brand-primary transition-colors">What's New</a></li>
                 <li><a href="careers.html" class="text-brand-primary font-bold transition-colors">Careers</a></li>
                 <li><a href="index.html#contact" class="hover:text-brand-primary transition-colors">Contact</a></li>
+                
+                <!-- More Dropdown -->
+                <li class="relative group h-full flex items-center">
+                    <button class="flex items-center gap-1 hover:text-brand-primary transition-colors focus:outline-none py-2">
+                        More <i data-feather="chevron-down" class="w-4 h-4"></i>
+                    </button>
+                    <!-- Dropdown Content -->
+                    <div class="absolute top-full -left-4 pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-[60]">
+                        <div class="bg-white rounded-xl shadow-xl border border-slate-100 overflow-hidden flex flex-col py-2">
+                            <a href="index.html#services" class="px-5 py-3 hover:bg-slate-50 hover:text-brand-primary text-sm flex items-center gap-3 transition-colors">
+                                <i data-feather="grid" class="w-4 h-4 text-slate-400"></i> Services
+                            </a>
+                            <a href="whatsnew.html" class="px-5 py-3 hover:bg-slate-50 hover:text-brand-primary text-sm flex items-center gap-3 transition-colors">
+                                <i data-feather="bell" class="w-4 h-4 text-slate-400"></i> What's New
+                            </a>
+                            <a href="index.html#calculator" class="px-5 py-3 hover:bg-slate-50 hover:text-brand-primary text-sm flex items-center gap-3 transition-colors">
+                                <i data-feather="percent" class="w-4 h-4 text-slate-400"></i> Calculator
+                            </a>
+                            <a href="index.html#features" class="px-5 py-3 hover:bg-slate-50 hover:text-brand-primary text-sm flex items-center gap-3 transition-colors">
+                                <i data-feather="star" class="w-4 h-4 text-slate-400"></i> Features
+                            </a>
+                            <a href="https://www.themallu.online" class="px-5 py-3 hover:bg-slate-50 hover:text-brand-primary text-sm flex items-center gap-3 border-t border-slate-50 transition-colors">
+                                <i data-feather="external-link" class="w-4 h-4 text-slate-400"></i> Updates
+                            </a>
+                        </div>
+                    </div>
+                </li>
+
                 <li>
                     <a href="https://wee.bnking.in/c/ZmZlYTAyN" target="_blank"
                        class="apply-link bg-brand-primary hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg transition-all shadow-lg hover:shadow-blue-500/30 font-semibold tracking-wide">
