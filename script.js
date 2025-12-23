@@ -14,6 +14,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const errorPopup = document.getElementById('error-popup');
     const closeErrorBtn = document.getElementById('close-error');
     const applyLinks = document.querySelectorAll('.apply-link');
+    const initialLoader = document.getElementById('initial-loader');
+
+    // -- Initial Loader Animation --
+    if (initialLoader) {
+        setTimeout(() => {
+            initialLoader.classList.add('opacity-0', 'pointer-events-none');
+            setTimeout(() => {
+                initialLoader.style.display = 'none';
+            }, 700); // Wait for transition duration
+        }, 3000); // 3 seconds duration as requested
+    }
 
     // -- Scroll Reveal Animation --
     const revealElements = document.querySelectorAll('.reveal-on-scroll');
