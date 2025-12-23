@@ -7,7 +7,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Feather Icons -->
@@ -18,28 +18,42 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
                         serif: ['Playfair Display', 'serif'],
                     },
                     colors: {
                         brand: {
-                            dark: '#0f172a',
-                            primary: '#2563eb',
-                            accent: '#7c3aed',
+                            dark: '#0B1120', 
+                            primary: '#2563EB',
+                            secondary: '#4F46E5',
+                            accent: '#0EA5E9',
                         }
                     },
                     animation: {
-                        'pulse-slow': 'pulse-slow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'blob': 'blob 7s infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden relative">
+<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden relative selection:bg-brand-primary selection:text-white">
     
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-white z-[100] transform translate-x-full transition-transform duration-300 md:hidden flex flex-col shadow-2xl overflow-hidden" aria-hidden="true">
+    <div id="mobile-menu" class="fixed inset-0 bg-white/95 backdrop-blur-xl z-[100] transform translate-x-full transition-transform duration-300 md:hidden flex flex-col shadow-2xl" aria-hidden="true">
         <div class="flex items-center justify-between p-6 border-b border-slate-100 shrink-0">
             <span class="text-2xl font-serif font-bold text-slate-900 tracking-tight">
                 Mallu<span class="text-brand-primary">Finance</span>
@@ -48,85 +62,49 @@
                 <i data-feather="x" class="w-6 h-6"></i>
             </button>
         </div>
-
-        <!-- Scrollable Links -->
-        <div class="flex flex-col p-6 space-y-4 overflow-y-auto flex-1">
-            <a href="index.html#home" class="mobile-link text-lg font-medium text-slate-700 hover:text-brand-primary py-2 border-b border-slate-50">Home</a>
-            <a href="careers.html" class="mobile-link text-lg font-medium text-brand-primary py-2 border-b border-slate-50">Careers</a>
-            <a href="index.html#contact" class="mobile-link text-lg font-medium text-slate-700 hover:text-brand-primary py-2 border-b border-slate-50">Contact</a>
-            <a href="index.html#services" class="mobile-link text-lg font-medium text-slate-700 hover:text-brand-primary py-2 border-b border-slate-50">Services</a>
-            <a href="whatsnew.html" class="mobile-link text-lg font-medium text-slate-700 hover:text-brand-primary py-2 border-b border-slate-50">What's New</a>
-            <a href="index.html#calculator" class="mobile-link text-lg font-medium text-slate-700 hover:text-brand-primary py-2 border-b border-slate-50">Calculator</a>
-            <a href="index.html#features" class="mobile-link text-lg font-medium text-slate-700 hover:text-brand-primary py-2 border-b border-slate-50">Features</a>
-            <a href="https://www.themallu.online" class="mobile-link text-lg font-medium text-slate-700 hover:text-brand-primary py-2 border-b border-slate-50">Updates</a>
-            <a href="https://wee.bnking.in/c/ZmZlYTAyN" target="_blank" 
-               class="apply-link mt-4 w-full text-center bg-brand-primary text-white py-4 rounded-xl text-lg font-bold shadow-lg hover:bg-blue-700 transition-colors shrink-0">
-                Apply Now
-            </a>
-        </div>
-
-        <!-- Version Footer -->
-        <div class="p-4 border-t border-slate-100 bg-slate-50 text-center shrink-0">
-            <p class="text-slate-400 text-sm font-medium tracking-widest">Version V.1.8</p>
+        <div class="flex-1 overflow-y-auto p-6 space-y-6">
+            <nav class="space-y-2">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest px-1 mb-2">Navigation</p>
+                <a href="index.html#home" class="mobile-link flex items-center gap-4 p-4 rounded-xl hover:bg-blue-50 transition-colors group">
+                    <div class="w-10 h-10 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center text-brand-primary group-hover:scale-110 transition-transform">
+                        <i data-feather="home" class="w-5 h-5"></i>
+                    </div>
+                    <span class="font-semibold text-lg text-slate-700 group-hover:text-brand-primary">Home</span>
+                </a>
+                <a href="careers.html" class="mobile-link flex items-center gap-4 p-4 rounded-xl bg-blue-50 border border-blue-100 group">
+                    <div class="w-10 h-10 rounded-full bg-brand-primary text-white flex items-center justify-center shadow-md">
+                        <i data-feather="briefcase" class="w-5 h-5"></i>
+                    </div>
+                    <span class="font-semibold text-lg text-brand-primary">Careers</span>
+                </a>
+            </nav>
         </div>
     </div>
 
     <!-- Navigation -->
-    <header id="main-header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white/90 backdrop-blur-md py-4 shadow-sm">
+    <header id="main-header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent py-4">
         <nav class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
-            <!-- Professional Logo -->
-            <a href="index.html" class="flex items-center gap-2 group z-50 relative">
-                <div class="w-10 h-10 bg-brand-primary text-white rounded-lg flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+            <a href="index.html" class="flex items-center gap-2 group relative z-50">
+                <div class="w-10 h-10 bg-brand-primary text-white rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-3 transition-transform duration-300">
                     <span class="font-serif font-bold text-2xl">M</span>
                 </div>
-                <span class="text-2xl font-serif font-bold text-slate-900 tracking-tight group-hover:text-brand-primary transition-colors">
+                <span class="text-2xl font-serif font-bold text-slate-900 tracking-tight">
                     Mallu<span class="text-brand-primary">Finance</span>
                 </span>
             </a>
             
-            <!-- Desktop Menu -->
-            <ul class="hidden md:flex items-center gap-8 font-medium text-slate-600">
-                <li><a href="index.html#home" class="hover:text-brand-primary transition-colors">Home</a></li>
-                <li><a href="careers.html" class="text-brand-primary font-bold transition-colors">Careers</a></li>
-                <li><a href="index.html#contact" class="hover:text-brand-primary transition-colors">Contact</a></li>
-                
-                <!-- More Dropdown -->
-                <li class="relative group h-full flex items-center">
-                    <button class="flex items-center gap-1 hover:text-brand-primary transition-colors focus:outline-none py-2">
-                        More <i data-feather="chevron-down" class="w-4 h-4"></i>
-                    </button>
-                    <!-- Dropdown Content -->
-                    <div class="absolute top-full -left-4 pt-4 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 z-[60]">
-                        <div class="bg-white rounded-xl shadow-xl border border-slate-100 overflow-hidden flex flex-col py-2">
-                            <a href="index.html#services" class="px-5 py-3 hover:bg-slate-50 hover:text-brand-primary text-sm flex items-center gap-3 transition-colors">
-                                <i data-feather="grid" class="w-4 h-4 text-slate-400"></i> Services
-                            </a>
-                            <a href="whatsnew.html" class="px-5 py-3 hover:bg-slate-50 hover:text-brand-primary text-sm flex items-center gap-3 transition-colors">
-                                <i data-feather="bell" class="w-4 h-4 text-slate-400"></i> What's New
-                            </a>
-                            <a href="index.html#calculator" class="px-5 py-3 hover:bg-slate-50 hover:text-brand-primary text-sm flex items-center gap-3 transition-colors">
-                                <i data-feather="percent" class="w-4 h-4 text-slate-400"></i> Calculator
-                            </a>
-                            <a href="index.html#features" class="px-5 py-3 hover:bg-slate-50 hover:text-brand-primary text-sm flex items-center gap-3 transition-colors">
-                                <i data-feather="star" class="w-4 h-4 text-slate-400"></i> Features
-                            </a>
-                            <a href="https://www.themallu.online" class="px-5 py-3 hover:bg-slate-50 hover:text-brand-primary text-sm flex items-center gap-3 border-t border-slate-50 transition-colors">
-                                <i data-feather="external-link" class="w-4 h-4 text-slate-400"></i> Updates
-                            </a>
-                        </div>
-                    </div>
-                </li>
-
+            <ul class="hidden md:flex items-center gap-8 font-medium text-slate-600 text-sm tracking-wide">
+                <li><a href="index.html#home" class="hover:text-brand-primary transition-colors py-2 relative group">Home<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all group-hover:w-full"></span></a></li>
+                <li><a href="careers.html" class="text-brand-primary font-bold transition-colors py-2 relative group">Careers<span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span></a></li>
                 <li>
                     <a href="https://wee.bnking.in/c/ZmZlYTAyN" target="_blank"
-                       class="apply-link bg-brand-primary hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg transition-all shadow-lg hover:shadow-blue-500/30 font-semibold tracking-wide">
+                       class="apply-link bg-slate-900 hover:bg-brand-primary text-white px-6 py-2.5 rounded-full transition-all shadow-lg hover:shadow-blue-500/30 font-semibold tracking-wide flex items-center gap-2 transform hover:-translate-y-0.5">
                         Apply Now
                     </a>
                 </li>
             </ul>
 
-            <!-- Mobile Toggle -->
-            <button id="mobile-toggle" class="md:hidden text-slate-900 focus:outline-none p-2 rounded-md hover:bg-slate-100 transition-colors z-50 relative" aria-label="Toggle Menu">
+            <button id="mobile-toggle" class="md:hidden text-slate-900 focus:outline-none p-2 rounded-lg hover:bg-slate-100 transition-colors z-50" aria-label="Toggle Menu">
                 <i data-feather="menu" class="w-6 h-6"></i>
             </button>
         </nav>
@@ -134,140 +112,130 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="pt-32 pb-20 px-6 bg-slate-900 text-white relative overflow-hidden">
-            <!-- Background Elements -->
-            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-primary opacity-20 rounded-full blur-[100px] pointer-events-none"></div>
-            <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-purple-600 opacity-20 rounded-full blur-[100px] pointer-events-none"></div>
+        <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden bg-white">
+            <div class="absolute top-0 right-0 -z-10 w-[600px] h-[600px] bg-blue-100/50 rounded-full blur-3xl opacity-60 animate-blob"></div>
+            <div class="absolute bottom-0 left-0 -z-10 w-[400px] h-[400px] bg-purple-100/50 rounded-full blur-3xl opacity-60 animate-blob animation-delay-2000"></div>
 
-            <div class="max-w-4xl mx-auto text-center relative z-10">
-                <span class="inline-block py-1.5 px-4 rounded-full bg-slate-800 text-brand-primary text-xs font-bold tracking-widest mb-6 border border-slate-700 uppercase">
-                    We are Hiring
+            <div class="max-w-4xl mx-auto text-center reveal-on-scroll">
+                 <span class="inline-block py-2 px-4 rounded-full bg-blue-50 text-brand-primary text-xs font-bold tracking-widest mb-6 border border-blue-100 uppercase">
+                    We're Hiring
                 </span>
-                <h1 class="text-5xl md:text-7xl font-serif font-bold leading-tight mb-6">
-                    Build the Future of <br>
-                    <span class="text-brand-primary">Finance</span>
+                <h1 class="text-5xl md:text-7xl font-serif font-bold text-slate-900 leading-tight mb-6">
+                    Join the Future of <br>
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-primary to-brand-secondary">
+                        Financial Inclusion
+                    </span>
                 </h1>
-                <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-                    Join a team of passionate innovators dedicated to making financial freedom accessible to everyone in India. Work remotely or from our hubs.
+                <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    Build products that help millions of Indians achieve financial freedom. We are looking for dreamers, makers, and doers.
                 </p>
-                <a href="#openings"
-                   class="inline-flex items-center gap-2 px-8 py-4 bg-brand-primary text-white rounded-xl font-semibold hover:bg-blue-600 transition-all shadow-lg hover:shadow-blue-500/50">
-                    View Open Positions
-                    <i data-feather="arrow-down" class="w-5 h-5"></i>
-                </a>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#openings"
+                       class="px-8 py-4 bg-brand-primary text-white rounded-full font-bold hover:bg-brand-dark transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1">
+                        View Openings
+                    </a>
+                </div>
             </div>
         </section>
 
         <!-- Values Section -->
-        <section class="py-24 bg-white">
+        <section class="py-24 bg-slate-50">
             <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16 reveal-on-scroll">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">Our Core Values</h2>
+                    <p class="text-slate-500 max-w-2xl mx-auto">What defines us and how we work.</p>
+                </div>
+                
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-all">
-                        <div class="w-12 h-12 bg-blue-100 text-brand-primary rounded-xl flex items-center justify-center mb-6">
+                    <div class="p-10 rounded-3xl bg-white border border-slate-100 hover:border-brand-primary/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 reveal-on-scroll">
+                        <div class="w-14 h-14 bg-blue-50 text-brand-primary rounded-2xl flex items-center justify-center mb-6">
                             <i data-feather="zap" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Fast Paced</h3>
-                        <p class="text-slate-500">We move quickly to adapt to the market. Your ideas can turn into features in days, not months.</p>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Speed & Agility</h3>
+                        <p class="text-slate-500 leading-relaxed">We ship fast. We value rapid iteration and learning over endless planning.</p>
                     </div>
-                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-all">
-                        <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-6">
+                    <div class="p-10 rounded-3xl bg-white border border-slate-100 hover:border-purple-500/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 reveal-on-scroll">
+                        <div class="w-14 h-14 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mb-6">
                             <i data-feather="users" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Inclusive Culture</h3>
-                        <p class="text-slate-500">We value diversity and ensure every voice is heard. Collaboration is at the heart of everything we do.</p>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Customer First</h3>
+                        <p class="text-slate-500 leading-relaxed">Every line of code and every decision is made to improve our customer's financial life.</p>
                     </div>
-                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-all">
-                        <div class="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-6">
+                    <div class="p-10 rounded-3xl bg-white border border-slate-100 hover:border-green-500/30 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 reveal-on-scroll">
+                        <div class="w-14 h-14 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center mb-6">
                             <i data-feather="trending-up" class="w-6 h-6"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Growth First</h3>
-                        <p class="text-slate-500">We invest in your learning. From conferences to courses, we support your professional journey.</p>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Continuous Growth</h3>
+                        <p class="text-slate-500 leading-relaxed">We invest in your personal and professional development with generous learning budgets.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Job Listings -->
-        <section id="openings" class="py-20 bg-slate-50">
+        <section id="openings" class="py-24 bg-white">
             <div class="max-w-5xl mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">Current Openings</h2>
-                    <p class="text-slate-500">Find the role that fits your passion.</p>
+                <div class="text-center mb-16 reveal-on-scroll">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">Open Positions</h2>
+                    <p class="text-slate-500">Come shape the future with us.</p>
                 </div>
 
                 <div class="space-y-4">
                     <!-- Job Card 1 -->
-                    <div class="group bg-white p-6 md:p-8 rounded-2xl border border-slate-200 hover:border-brand-primary transition-all hover:shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-6">
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-primary transition-colors">Senior Relationship Manager</h3>
-                            <div class="flex items-center gap-4 mt-2 text-sm text-slate-500">
-                                <span class="flex items-center gap-1"><i data-feather="map-pin" class="w-4 h-4"></i> Kochi / Hybrid</span>
-                                <span class="flex items-center gap-1"><i data-feather="clock" class="w-4 h-4"></i> Full-time</span>
+                    <div class="group bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-200 hover:border-brand-primary/50 hover:bg-white transition-all hover:shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-6 reveal-on-scroll">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                                <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-primary transition-colors">Senior Relationship Manager</h3>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-brand-primary uppercase tracking-wide">Sales</span>
+                            </div>
+                            <div class="flex items-center gap-4 text-sm text-slate-500">
+                                <span class="flex items-center gap-1.5"><i data-feather="map-pin" class="w-4 h-4 text-slate-400"></i> Kochi / Hybrid</span>
+                                <span class="flex items-center gap-1.5"><i data-feather="clock" class="w-4 h-4 text-slate-400"></i> Full-time</span>
                             </div>
                         </div>
                         <a href="mailto:careers@themallu.online?subject=Application for Relationship Manager"
-                           class="px-6 py-3 bg-slate-100 text-slate-700 font-semibold rounded-lg hover:bg-brand-primary hover:text-white transition-colors text-center">
+                           class="inline-flex items-center justify-center px-6 py-3 bg-white border-2 border-slate-200 text-slate-700 font-bold rounded-xl hover:bg-brand-primary hover:border-brand-primary hover:text-white transition-all whitespace-nowrap shadow-sm">
                             Apply Now
                         </a>
                     </div>
 
                     <!-- Job Card 2 -->
-                    <div class="group bg-white p-6 md:p-8 rounded-2xl border border-slate-200 hover:border-brand-primary transition-all hover:shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-6">
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-primary transition-colors">Loan Processing Specialist</h3>
-                            <div class="flex items-center gap-4 mt-2 text-sm text-slate-500">
-                                <span class="flex items-center gap-1"><i data-feather="map-pin" class="w-4 h-4"></i> Remote</span>
-                                <span class="flex items-center gap-1"><i data-feather="clock" class="w-4 h-4"></i> Full-time</span>
+                    <div class="group bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-200 hover:border-purple-500/50 hover:bg-white transition-all hover:shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-6 reveal-on-scroll">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-3 mb-2">
+                                <h3 class="text-xl font-bold text-slate-900 group-hover:text-purple-600 transition-colors">Loan Processing Specialist</h3>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-100 text-purple-600 uppercase tracking-wide">Operations</span>
+                            </div>
+                            <div class="flex items-center gap-4 text-sm text-slate-500">
+                                <span class="flex items-center gap-1.5"><i data-feather="map-pin" class="w-4 h-4 text-slate-400"></i> Remote</span>
+                                <span class="flex items-center gap-1.5"><i data-feather="briefcase" class="w-4 h-4 text-slate-400"></i> 2+ Years Exp</span>
                             </div>
                         </div>
                         <a href="mailto:careers@themallu.online?subject=Application for Loan Processing Specialist"
-                           class="px-6 py-3 bg-slate-100 text-slate-700 font-semibold rounded-lg hover:bg-brand-primary hover:text-white transition-colors text-center">
-                            Apply Now
-                        </a>
-                    </div>
-
-                    <!-- Job Card 3 -->
-                    <div class="group bg-white p-6 md:p-8 rounded-2xl border border-slate-200 hover:border-brand-primary transition-all hover:shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-6">
-                        <div>
-                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-brand-primary transition-colors">Content Writer (Finance)</h3>
-                            <div class="flex items-center gap-4 mt-2 text-sm text-slate-500">
-                                <span class="flex items-center gap-1"><i data-feather="map-pin" class="w-4 h-4"></i> Remote</span>
-                                <span class="flex items-center gap-1"><i data-feather="clock" class="w-4 h-4"></i> Part-time / Contract</span>
-                            </div>
-                        </div>
-                        <a href="mailto:careers@themallu.online?subject=Application for Content Writer"
-                           class="px-6 py-3 bg-slate-100 text-slate-700 font-semibold rounded-lg hover:bg-brand-primary hover:text-white transition-colors text-center">
+                           class="inline-flex items-center justify-center px-6 py-3 bg-white border-2 border-slate-200 text-slate-700 font-bold rounded-xl hover:bg-purple-600 hover:border-purple-600 hover:text-white transition-all whitespace-nowrap shadow-sm">
                             Apply Now
                         </a>
                     </div>
                 </div>
 
-                <div class="mt-12 text-center p-8 bg-blue-50 rounded-2xl border border-blue-100">
-                    <h4 class="text-lg font-bold text-slate-900 mb-2">Don't see a perfect fit?</h4>
-                    <p class="text-slate-600 mb-4">We are always looking for talent. Send your CV to us directly.</p>
-                    <a href="mailto:careers@themallu.online" class="text-brand-primary font-semibold hover:underline">
-                        careers@themallu.online
-                    </a>
+                <div class="mt-16 text-center reveal-on-scroll">
+                    <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-[2rem] p-8 md:p-12 text-white">
+                        <h4 class="text-2xl font-serif font-bold mb-4">Don't see your role?</h4>
+                        <p class="text-slate-400 mb-8 max-w-lg mx-auto">We are always on the lookout for exceptional talent. If you think you can make a difference, we want to hear from you.</p>
+                        <a href="mailto:careers@themallu.online" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 px-6 py-3 rounded-full font-bold transition-colors border border-white/10">
+                            <i data-feather="mail" class="w-4 h-4"></i> Email your resume
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-slate-50 border-t border-slate-200 py-10">
+    <footer class="bg-slate-900 text-white border-t border-slate-800 py-12">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <p class="text-slate-500 text-sm">&copy; 2025 Mallu Finance. Licensed Financial Partner. All rights reserved.</p>
         </div>
     </footer>
-
-    <!-- Loading Overlay -->
-    <div id="loading-overlay" class="fixed inset-0 z-[60] bg-white/90 backdrop-blur-sm flex flex-col items-center justify-center hidden">
-        <div class="relative w-16 h-16">
-            <div class="absolute w-16 h-16 border-4 border-brand-primary/20 rounded-full"></div>
-            <div class="absolute w-16 h-16 border-4 border-brand-primary rounded-full border-t-transparent animate-spin"></div>
-        </div>
-        <p class="mt-4 text-lg font-medium text-slate-700 animate-pulse">Securely redirecting you...</p>
-    </div>
-
     <script src="script.js"></script>
 </body>
 </html>

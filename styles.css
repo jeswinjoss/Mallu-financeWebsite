@@ -1,6 +1,5 @@
 /* 
-  Tailwind CSS is used for main styling.
-  Custom animations and overrides below.
+  Mallu Finance - Custom Styles
 */
 
 html {
@@ -8,13 +7,12 @@ html {
 }
 
 body {
-    /* Ensure modal overlays cover everything */
     position: relative;
 }
 
-/* Custom scrollbar */
+/* Modern Scrollbar */
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -22,29 +20,32 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-    border-radius: 4px;
+    background: #94a3b8;
+    border-radius: 5px;
+    border: 2px solid #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8;
+    background: #64748b;
 }
 
-/* Range Slider Styling */
+/* Range Slider Customization */
 input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
-    height: 20px;
-    width: 20px;
+    height: 24px;
+    width: 24px;
     border-radius: 50%;
-    background: #2563eb;
+    background: #ffffff;
+    border: 2px solid #2563eb;
     cursor: pointer;
-    margin-top: -6px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
-    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.4);
-    transition: transform 0.1s;
+    margin-top: -8px;
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.3);
+    transition: all 0.2s ease;
 }
 
 input[type=range]::-webkit-slider-thumb:hover {
-    transform: scale(1.1);
+    transform: scale(1.15);
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.4);
 }
 
 input[type=range]::-webkit-slider-runnable-track {
@@ -52,26 +53,28 @@ input[type=range]::-webkit-slider-runnable-track {
     height: 8px;
     cursor: pointer;
     background: #e2e8f0;
-    border-radius: 4px;
+    border-radius: 9999px;
 }
 
-/* Firefox specific */
+/* Firefox Specific */
 input[type=range]::-moz-range-thumb {
-    height: 20px;
-    width: 20px;
-    border: none;
+    height: 24px;
+    width: 24px;
+    border: 2px solid #2563eb;
     border-radius: 50%;
-    background: #2563eb;
+    background: #ffffff;
     cursor: pointer;
-    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.4);
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.3);
 }
 
-/* Animation for slow background pulse */
-@keyframes pulse-slow {
-    0%, 100% { opacity: 0.6; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(1.05); }
+/* Scroll Reveal Animation Classes */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.animate-pulse-slow {
-    animation: pulse-slow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }

@@ -1,11 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize Feather Icons
-    // This is critical for the menu icon to show up
+    // -- Icons --
     if (typeof feather !== 'undefined') {
         feather.replace();
     }
 
-    // -- Elements --
+    // -- DOM Elements --
     const mobileToggle = document.getElementById('mobile-toggle');
     const closeMenu = document.getElementById('close-menu');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -16,46 +15,52 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeErrorBtn = document.getElementById('close-error');
     const applyLinks = document.querySelectorAll('.apply-link');
 
-    // -- Mobile Menu Logic --
+    // -- Scroll Reveal Animation --
+    const revealElements = document.querySelectorAll('.reveal-on-scroll');
+    
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // -- Mobile Menu --
     function toggleMenu(show) {
         if (!mobileMenu) return;
         if (show) {
             mobileMenu.classList.remove('translate-x-full');
             document.body.style.overflow = 'hidden';
-            mobileMenu.setAttribute('aria-hidden', 'false');
         } else {
             mobileMenu.classList.add('translate-x-full');
             document.body.style.overflow = '';
-            mobileMenu.setAttribute('aria-hidden', 'true');
         }
     }
 
-    if (mobileToggle) {
-        mobileToggle.addEventListener('click', () => toggleMenu(true));
-    }
-    
-    if (closeMenu) {
-        closeMenu.addEventListener('click', () => toggleMenu(false));
-    }
-
+    if (mobileToggle) mobileToggle.addEventListener('click', () => toggleMenu(true));
+    if (closeMenu) closeMenu.addEventListener('click', () => toggleMenu(false));
     mobileLinks.forEach(link => link.addEventListener('click', () => toggleMenu(false)));
 
-    // -- Header Scroll Effect --
+    // -- Header Glass Effect --
     function handleScroll() {
         if (!header) return;
-        if (mobileMenu && !mobileMenu.classList.contains('translate-x-full')) return;
-
-        if (window.scrollY > 20) {
-            header.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-sm', 'py-2');
+        if (window.scrollY > 10) {
+            header.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-2');
             header.classList.remove('py-4', 'bg-transparent');
         } else {
-            header.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-sm', 'py-2');
+            header.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-2');
             header.classList.add('py-4', 'bg-transparent');
         }
     }
-
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
+    handleScroll();
 
     // -- EMI Calculator Logic --
     const amountInput = document.getElementById('loan-amount');
@@ -81,12 +86,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const r = parseFloat(rateInput.value) / 12 / 100;
         const n = parseFloat(tenureInput.value) * 12;
 
-        // Update Labels
+        // Update UI Text
         if (amountDisplay) amountDisplay.innerText = formatCurrency(P);
         if (rateDisplay) rateDisplay.innerText = rateInput.value;
         if (tenureDisplay) tenureDisplay.innerText = tenureInput.value;
 
-        // Calculation: EMI = [P x r x (1+r)^n]/[(1+r)^n-1]
+        // Calculation
         let emi = 0;
         if (r === 0) {
              emi = P / n;
@@ -97,60 +102,72 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalPayment = emi * n;
         const totalInterest = totalPayment - P;
 
-        // Update Outputs
-        if (emiOutput) emiOutput.innerText = formatCurrency(emi);
-        if (interestOutput) interestOutput.innerText = formatCurrency(totalInterest);
-        if (totalOutput) totalOutput.innerText = formatCurrency(totalPayment);
+        // Update Results
+        if (emiOutput) emiOutput.innerText = formatCurrency(Math.round(emi));
+        if (interestOutput) interestOutput.innerText = formatCurrency(Math.round(totalInterest));
+        if (totalOutput) totalOutput.innerText = formatCurrency(Math.round(totalPayment));
+        
+        // Update slider background gradient for visual feedback
+        updateSliderTrack(amountInput);
+        updateSliderTrack(rateInput);
+        updateSliderTrack(tenureInput);
+    }
+
+    function updateSliderTrack(input) {
+        if(!input) return;
+        const min = input.min ? parseFloat(input.min) : 0;
+        const max = input.max ? parseFloat(input.max) : 100;
+        const val = parseFloat(input.value);
+        const percentage = ((val - min) / (max - min)) * 100;
+        
+        input.style.background = `linear-gradient(to right, #2563eb ${percentage}%, #e2e8f0 ${percentage}%)`;
     }
 
     if (amountInput && rateInput && tenureInput) {
         [amountInput, rateInput, tenureInput].forEach(input => {
             input.addEventListener('input', calculateEMI);
         });
-        // Initial Calculation
         calculateEMI();
     }
 
-    // -- Link Handling (Loader + Broken Link Check) --
+    // -- Link Handling --
     applyLinks.forEach(link => {
         link.addEventListener('click', async (e) => {
             const targetUrl = link.getAttribute('href');
-            
-            // Allow internal links to work normally
             if (targetUrl.startsWith('#')) return;
             
-            // Prevent default to show loader
             e.preventDefault();
+            if (loadingOverlay) {
+                loadingOverlay.classList.remove('hidden');
+                loadingOverlay.classList.remove('opacity-0');
+            }
             
-            if (loadingOverlay) loadingOverlay.classList.remove('hidden');
-            
-            // Simulate loading time
-            await new Promise(resolve => setTimeout(resolve, 1500));
+            // Simulate network request
+            await new Promise(resolve => setTimeout(resolve, 1200));
 
             try {
-                // Basic connectivity check simulation
-                if (!navigator.onLine) {
-                    throw new Error("No internet connection");
-                }
+                if (!navigator.onLine) throw new Error("Offline");
                 
-                // Redirect manually after check
                 const isNewTab = link.target === '_blank';
                 if (isNewTab) {
                     window.open(targetUrl, '_blank');
-                    if (loadingOverlay) loadingOverlay.classList.add('hidden');
+                    if (loadingOverlay) {
+                        loadingOverlay.classList.add('opacity-0');
+                        setTimeout(() => loadingOverlay.classList.add('hidden'), 300);
+                    }
                 } else {
                     window.location.href = targetUrl;
                 }
-
             } catch (err) {
-                 console.error(err);
-                 if (loadingOverlay) loadingOverlay.classList.add('hidden');
+                 if (loadingOverlay) {
+                     loadingOverlay.classList.add('opacity-0');
+                     setTimeout(() => loadingOverlay.classList.add('hidden'), 300);
+                 }
                  if (errorPopup) errorPopup.classList.remove('hidden');
             }
         });
     });
 
-    // Close Error Popup
     if (closeErrorBtn && errorPopup) {
         closeErrorBtn.addEventListener('click', () => {
             errorPopup.classList.add('hidden');
