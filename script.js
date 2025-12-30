@@ -16,6 +16,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const applyLinks = document.querySelectorAll('.apply-link');
     const initialLoader = document.getElementById('initial-loader');
 
+    // -- Snowfall Logic --
+    function createSnowflakes() {
+        const container = document.getElementById('snow-container');
+        if (!container) return;
+        
+        const snowflakeCount = 40;
+        
+        for (let i = 0; i < snowflakeCount; i++) {
+            const snowflake = document.createElement('div');
+            snowflake.textContent = '❄️';
+            snowflake.classList.add('snowflake');
+            
+            // Randomize properties
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.animationDuration = Math.random() * 5 + 8 + 's'; // 8-13s
+            snowflake.style.animationDelay = Math.random() * 5 + 's';
+            snowflake.style.opacity = Math.random() * 0.4 + 0.1; // Faded
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+            
+            container.appendChild(snowflake);
+        }
+    }
+    createSnowflakes();
+
     // -- Initial Loader Animation --
     if (initialLoader) {
         setTimeout(() => {
