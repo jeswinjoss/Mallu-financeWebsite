@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Careers | Mallu Finance</title>
+    <title>Join the Mission | Mallu Finance Careers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="styles.css">
@@ -11,47 +14,311 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
-                    colors: { brand: { dark: '#0B1120', primary: '#2563EB', secondary: '#4F46E5', accent: '#0EA5E9' } }
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0B1120', 
+                            primary: '#2563EB',
+                            secondary: '#4F46E5',
+                            accent: '#0EA5E9',
+                        }
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased relative selection:bg-brand-primary selection:text-white">
-    <header id="main-header" class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm py-4">
+<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden relative selection:bg-brand-primary selection:text-white">
+    
+    <div id="initial-loader" class="fixed inset-0 z-[200] bg-white flex flex-col items-center justify-center transition-opacity duration-700">
+        <div class="text-center opacity-0 animate-fade-in-up flex flex-col items-center">
+             <div class="w-24 h-24 bg-brand-primary text-white rounded-3xl flex items-center justify-center mb-6 shadow-2xl shadow-blue-500/20">
+                <span class="font-serif font-bold text-5xl">M</span>
+            </div>
+            <p class="text-slate-400 font-medium tracking-wide text-sm uppercase animate-pulse">Building the future</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header id="main-header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent py-4">
         <nav class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
             <a href="index.html" class="flex items-center gap-2 group relative z-50">
                 <div class="w-10 h-10 bg-brand-primary text-white rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-3 transition-transform duration-300">
                     <span class="font-serif font-bold text-2xl">M</span>
                 </div>
-                <span class="text-2xl font-serif font-bold text-slate-900 tracking-tight">Mallu<span class="text-brand-primary">Finance</span></span>
+                <span class="text-2xl font-serif font-bold text-slate-900 tracking-tight">
+                    Mallu<span class="text-brand-primary">Finance</span>
+                </span>
             </a>
+            
             <ul class="hidden md:flex items-center gap-8 font-medium text-slate-600 text-sm tracking-wide">
-                <li><a href="index.html#home" class="hover:text-brand-primary transition-colors py-2 relative group">Home<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all group-hover:w-full"></span></a></li>
-                <li><a href="careers.html" class="text-brand-primary font-bold transition-colors py-2 relative group">Careers<span class="absolute bottom-0 left-0 w-full h-0.5 bg-brand-primary"></span></a></li>
-                <li><a href="mailto:info@themallu.online" class="apply-link bg-slate-900 hover:bg-brand-primary text-white px-6 py-2.5 rounded-full transition-all">Contact Us</a></li>
+                <li><a href="index.html" class="hover:text-brand-primary transition-colors py-2 relative group">Home<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all group-hover:w-full"></span></a></li>
+                <li><a href="#openings" class="hover:text-brand-primary transition-colors py-2">Jobs</a></li>
+                <li><a href="#culture" class="hover:text-brand-primary transition-colors py-2">Culture</a></li>
+                <li>
+                    <a href="index.html#contact" class="bg-slate-900 hover:bg-brand-primary text-white px-6 py-2.5 rounded-full transition-all shadow-lg hover:shadow-blue-500/30 font-semibold tracking-wide flex items-center gap-2 transform hover:-translate-y-0.5">
+                        Contact Us
+                    </a>
+                </li>
             </ul>
+
+            <button id="mobile-toggle" class="md:hidden text-slate-900 p-2 rounded-lg hover:bg-slate-100 transition-colors z-50" aria-label="Toggle Menu">
+                <i data-feather="menu" class="w-6 h-6"></i>
+            </button>
         </nav>
     </header>
-    <main class="pt-32 pb-20">
-        <div class="max-w-5xl mx-auto px-6 text-center mb-16">
-            <h1 class="text-5xl md:text-6xl font-serif font-bold text-slate-900 mb-6">Join Our Team</h1>
-            <p class="text-slate-600 text-lg max-w-2xl mx-auto">Email your resume to <span class="text-brand-primary font-bold">info@themallu.online</span> to apply for current openings.</p>
-        </div>
-    </main>
-    <footer class="bg-slate-900 text-white border-t border-slate-800 py-12">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="flex items-center gap-3"><span class="text-2xl font-serif font-bold">Mallu<span class="text-brand-primary">Finance</span></span></div>
-                <div class="flex gap-8 text-slate-400 font-medium">
-                    <a href="privacypolicy.html" class="hover:text-white transition-colors">Privacy</a>
-                    <a href="terms.html" class="hover:text-white transition-colors">Terms</a>
-                    <a href="mailto:info@themallu.online" class="hover:text-white transition-colors">Support</a>
+
+    <main>
+        <!-- Cool Hero Section -->
+        <section class="relative pt-40 pb-20 md:pt-64 md:pb-40 px-6 overflow-hidden bg-brand-dark">
+            <div class="absolute top-0 right-0 -z-0 w-full h-full">
+                <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-primary/20 rounded-full blur-[120px] -mr-96 -mt-96 animate-blob"></div>
+                <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-secondary/10 rounded-full blur-[120px] -ml-48 -mb-48 animate-blob animation-delay-2000"></div>
+                <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="reveal-on-scroll">
+                         <span class="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold tracking-widest mb-6 border border-blue-500/20 uppercase">
+                            <span class="flex h-2 w-2 relative">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                            </span>
+                            We're Expanding Our Team
+                        </span>
+                        <h1 class="text-5xl md:text-7xl font-serif font-bold text-white leading-[1.1] mb-8">
+                            Help us redefine <br>
+                            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-400 to-cyan-400">
+                                Wealth Creation.
+                            </span>
+                        </h1>
+                        <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-xl leading-relaxed">
+                            Mallu Finance is on a mission to bring world-class financial solutions to the masses. We're looking for passionate individuals to help us scale to the next 10 million users.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#openings" class="px-8 py-4 bg-brand-primary text-white rounded-full font-bold text-lg hover:bg-blue-600 transition-all shadow-xl shadow-blue-500/20 hover:-translate-y-1">
+                                Explore Roles
+                            </a>
+                            <a href="#culture" class="px-8 py-4 bg-white/5 text-white border border-white/10 rounded-full font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-sm">
+                                Our Culture
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="hidden lg:grid grid-cols-2 gap-4 reveal-on-scroll">
+                        <div class="space-y-4 pt-12">
+                            <div class="aspect-square bg-slate-800 rounded-[2.5rem] overflow-hidden group shadow-2xl relative">
+                                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=600" alt="Team" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 to-transparent"></div>
+                                <div class="absolute bottom-6 left-6 text-white font-bold">Collaborative</div>
+                            </div>
+                            <div class="aspect-video bg-brand-primary/20 rounded-[2.5rem] border border-brand-primary/30 flex items-center justify-center backdrop-blur-sm">
+                                <div class="text-center">
+                                    <div class="text-4xl font-bold text-white">10k+</div>
+                                    <div class="text-xs text-blue-300 font-bold uppercase tracking-wider">Users Served</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="aspect-video bg-brand-accent/20 rounded-[2.5rem] border border-brand-accent/30 flex items-center justify-center backdrop-blur-sm">
+                                <div class="text-center">
+                                    <div class="text-4xl font-bold text-white">Remote</div>
+                                    <div class="text-xs text-cyan-300 font-bold uppercase tracking-wider">Work Friendly</div>
+                                </div>
+                            </div>
+                            <div class="aspect-square bg-slate-800 rounded-[2.5rem] overflow-hidden group shadow-2xl relative">
+                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600" alt="Meeting" class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700">
+                                <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/80 to-transparent"></div>
+                                <div class="absolute bottom-6 left-6 text-white font-bold">Innovative</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
+
+        <!-- Cool Benefits Section -->
+        <section id="culture" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 reveal-on-scroll">
+                    <div class="max-w-2xl">
+                        <h2 class="text-3xl md:text-5xl font-serif font-bold text-slate-900 mb-6">Why you'll love <br>working with us</h2>
+                        <p class="text-slate-500 text-lg">We've built a culture that prioritizes people, growth, and the pursuit of excellence. We're not just a company; we're a community.</p>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="w-24 h-24 bg-slate-100 rounded-full flex items-center justify-center text-brand-primary animate-spin-slow">
+                            <i data-feather="star" class="w-8 h-8"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="p-10 rounded-[2rem] bg-slate-50 border border-slate-100 hover:bg-brand-primary hover:text-white group transition-all duration-500 reveal-on-scroll">
+                        <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform">
+                            <i data-feather="heart" class="text-brand-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Health & Wellness</h3>
+                        <p class="text-slate-500 group-hover:text-blue-100 text-sm leading-relaxed">Comprehensive insurance for you and your family, plus mental health support.</p>
+                    </div>
+                    
+                    <div class="p-10 rounded-[2rem] bg-slate-50 border border-slate-100 hover:bg-brand-secondary hover:text-white group transition-all duration-500 reveal-on-scroll" style="transition-delay: 100ms;">
+                        <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform">
+                            <i data-feather="map" class="text-brand-secondary"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Work From Anywhere</h3>
+                        <p class="text-slate-500 group-hover:text-indigo-100 text-sm leading-relaxed">Flexible remote work policies and a stipend to set up your dream home office.</p>
+                    </div>
+
+                    <div class="p-10 rounded-[2rem] bg-slate-50 border border-slate-100 hover:bg-brand-accent hover:text-white group transition-all duration-500 reveal-on-scroll" style="transition-delay: 200ms;">
+                        <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform">
+                            <i data-feather="book-open" class="text-brand-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Learning Budget</h3>
+                        <p class="text-slate-500 group-hover:text-cyan-100 text-sm leading-relaxed">Annual budget for books, courses, and conferences to keep you growing.</p>
+                    </div>
+
+                    <div class="p-10 rounded-[2rem] bg-slate-50 border border-slate-100 hover:bg-slate-900 hover:text-white group transition-all duration-500 reveal-on-scroll" style="transition-delay: 300ms;">
+                        <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform">
+                            <i data-feather="award" class="text-slate-900"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-4">Equity Options</h3>
+                        <p class="text-slate-500 group-hover:text-slate-400 text-sm leading-relaxed">Own a piece of the company. We offer competitive ESOPs for all full-time employees.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Job Board Section -->
+        <section id="openings" class="py-24 bg-slate-50">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="text-center mb-20 reveal-on-scroll">
+                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-slate-900 mb-4">Current Openings</h2>
+                    <p class="text-slate-500 text-lg">Explore opportunities to grow your career with us.</p>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Job Card: Design/Product -->
+                    <div class="group bg-white p-6 md:p-10 rounded-[2.5rem] shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all flex flex-col md:flex-row md:items-center justify-between gap-8 reveal-on-scroll">
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-center gap-3 mb-4">
+                                <span class="px-3 py-1 rounded-full bg-blue-50 text-brand-primary text-[10px] font-bold uppercase tracking-wider">Business</span>
+                                <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-wider">Full-time</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-2 group-hover:text-brand-primary transition-colors">Senior Wealth Advisor</h3>
+                            <p class="text-slate-500 text-sm max-w-lg mb-4">Lead our HNI desk and provide curated investment solutions to high net worth clients across India.</p>
+                            <div class="flex items-center gap-6">
+                                <div class="flex items-center gap-2 text-slate-400 text-sm">
+                                    <i data-feather="map-pin" class="w-4 h-4"></i> Mumbai / Remote
+                                </div>
+                                <div class="flex items-center gap-2 text-slate-400 text-sm">
+                                    <i data-feather="dollar-sign" class="w-4 h-4"></i> Competitive Pay + Bonus
+                                </div>
+                            </div>
+                        </div>
+                        <a href="mailto:careers@themallu.online?subject=Application: Senior Wealth Advisor" class="px-10 py-4 bg-slate-900 text-white font-bold rounded-2xl hover:bg-brand-primary transition-all shadow-lg hover:shadow-blue-500/20 text-center">
+                            Apply Now
+                        </a>
+                    </div>
+
+                    <!-- Job Card: Engineering -->
+                    <div class="group bg-white p-6 md:p-10 rounded-[2.5rem] shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all flex flex-col md:flex-row md:items-center justify-between gap-8 reveal-on-scroll">
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-center gap-3 mb-4">
+                                <span class="px-3 py-1 rounded-full bg-purple-50 text-purple-600 text-[10px] font-bold uppercase tracking-wider">Engineering</span>
+                                <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-wider">Remote</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-2 group-hover:text-purple-600 transition-colors">Frontend Engineer (React)</h3>
+                            <p class="text-slate-500 text-sm max-w-lg mb-4">Build highly performant and accessible web interfaces for our million-plus user base using React and Tailwind.</p>
+                            <div class="flex items-center gap-6">
+                                <div class="flex items-center gap-2 text-slate-400 text-sm">
+                                    <i data-feather="map-pin" class="w-4 h-4"></i> Anywhere
+                                </div>
+                                <div class="flex items-center gap-2 text-slate-400 text-sm">
+                                    <i data-feather="clock" class="w-4 h-4"></i> Flexible Hours
+                                </div>
+                            </div>
+                        </div>
+                        <a href="mailto:careers@themallu.online?subject=Application: Frontend Engineer" class="px-10 py-4 bg-slate-900 text-white font-bold rounded-2xl hover:bg-purple-600 transition-all shadow-lg hover:shadow-purple-500/20 text-center">
+                            Apply Now
+                        </a>
+                    </div>
+
+                    <!-- Job Card: Sales -->
+                    <div class="group bg-white p-6 md:p-10 rounded-[2.5rem] shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all flex flex-col md:flex-row md:items-center justify-between gap-8 reveal-on-scroll">
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-center gap-3 mb-4">
+                                <span class="px-3 py-1 rounded-full bg-green-50 text-green-600 text-[10px] font-bold uppercase tracking-wider">Operations</span>
+                                <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-wider">Hybrid</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-2 group-hover:text-green-600 transition-colors">Loan Processing Officer</h3>
+                            <p class="text-slate-500 text-sm max-w-lg mb-4">Streamline the application lifecycle and manage partnerships with leading Indian banks for smooth disbursals.</p>
+                            <div class="flex items-center gap-6">
+                                <div class="flex items-center gap-2 text-slate-400 text-sm">
+                                    <i data-feather="map-pin" class="w-4 h-4"></i> Kochi, Kerala
+                                </div>
+                                <div class="flex items-center gap-2 text-slate-400 text-sm">
+                                    <i data-feather="zap" class="w-4 h-4"></i> Fast Growth Track
+                                </div>
+                            </div>
+                        </div>
+                        <a href="mailto:careers@themallu.online?subject=Application: Loan Processing Officer" class="px-10 py-4 bg-slate-900 text-white font-bold rounded-2xl hover:bg-green-600 transition-all shadow-lg hover:shadow-green-500/20 text-center">
+                            Apply Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Generic CTA -->
+                <div class="mt-20 p-12 rounded-[3rem] bg-gradient-to-br from-slate-900 via-brand-dark to-slate-900 text-white text-center reveal-on-scroll">
+                    <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="send" class="text-brand-primary"></i>
+                    </div>
+                    <h3 class="text-3xl font-serif font-bold mb-4">Don't see your dream job?</h3>
+                    <p class="text-slate-400 mb-8 max-w-lg mx-auto">We're always looking for exceptional talent in engineering, design, marketing, and sales. Send us your resume and we'll reach out.</p>
+                    <a href="mailto:careers@themallu.online" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-slate-900 font-bold rounded-full hover:bg-brand-primary hover:text-white transition-all">
+                        Send General Application <i data-feather="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-brand-dark text-white py-16 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center">
+                    <span class="font-serif font-bold text-lg">M</span>
+                </div>
+                <span class="text-xl font-serif font-bold tracking-tight">Mallu<span class="text-brand-primary">Finance</span></span>
+            </div>
+            <div class="flex gap-8 text-sm font-medium text-slate-500">
+                <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                <a href="index.html#services" class="hover:text-white transition-colors">Services</a>
+                <a href="whatsnew.html" class="hover:text-white transition-colors">Updates</a>
+            </div>
+            <p class="text-slate-600 text-xs">&copy; 2025 Mallu Finance. Licensed Financial Partner.</p>
         </div>
     </footer>
-    <script>feather.replace();</script>
+
+    <script src="script.js"></script>
 </body>
 </html>
