@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What's New | Mallu Finance Updates</title>
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Feather Icons -->
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="styles.css">
     <script>
@@ -21,228 +18,92 @@
                         sans: ['Plus Jakarta Sans', 'sans-serif'],
                         serif: ['Playfair Display', 'serif'],
                     },
-                    colors: {
-                        brand: {
-                            dark: '#0B1120', 
-                            primary: '#2563EB',
-                            secondary: '#4F46E5',
-                            accent: '#0EA5E9',
-                        }
-                    },
-                    animation: {
-                        'blob': 'blob 7s infinite',
-                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-                    },
-                    keyframes: {
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
-                        },
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        }
-                    }
+                    colors: { brand: { dark: '#0B1120', primary: '#2563EB', secondary: '#4F46E5', accent: '#0EA5E9' } }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden relative selection:bg-brand-primary selection:text-white">
-    
-    <!-- Initial Loading Screen -->
+<body class="bg-slate-50 text-slate-800 antialiased relative selection:bg-brand-primary selection:text-white">
     <div id="initial-loader" class="fixed inset-0 z-[200] bg-white flex flex-col items-center justify-center transition-opacity duration-700">
-        <div class="text-center opacity-0 animate-fade-in-up flex flex-col items-center" style="animation-fill-mode: forwards;">
+        <div class="text-center opacity-0 animate-fade-in-up flex flex-col items-center">
              <div class="w-24 h-24 bg-brand-primary text-white rounded-3xl flex items-center justify-center mb-6 shadow-2xl shadow-blue-500/20">
                 <span class="font-serif font-bold text-5xl">M</span>
             </div>
-            <h1 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 tracking-tight mb-2">
-                Mallu<span class="text-brand-primary">Finance</span>
-            </h1>
             <p class="text-slate-400 font-medium tracking-wide text-sm uppercase animate-pulse">Evolution in progress</p>
         </div>
     </div>
-
-    <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" class="fixed inset-0 bg-white/95 backdrop-blur-xl z-[100] transform translate-x-full transition-transform duration-300 md:hidden flex flex-col shadow-2xl" aria-hidden="true">
         <div class="flex items-center justify-between p-6 border-b border-slate-100 shrink-0">
-            <span class="text-2xl font-serif font-bold text-slate-900 tracking-tight">
-                Mallu<span class="text-brand-primary">Finance</span>
-            </span>
-            <button id="close-menu" class="text-slate-500 p-2 hover:bg-slate-100 rounded-full transition-colors focus:outline-none" aria-label="Close Menu">
-                <i data-feather="x" class="w-6 h-6"></i>
-            </button>
+            <span class="text-2xl font-serif font-bold text-slate-900 tracking-tight">Mallu<span class="text-brand-primary">Finance</span></span>
+            <button id="close-menu" class="text-slate-500 p-2"><i data-feather="x" class="w-6 h-6"></i></button>
         </div>
-        <div class="flex-1 overflow-y-auto p-6 space-y-4">
-            <a href="index.html" class="mobile-link flex items-center gap-4 p-4 rounded-xl hover:bg-slate-50">
-                <i data-feather="home" class="w-5 h-5 text-brand-primary"></i>
-                <span class="font-semibold">Home</span>
-            </a>
-            <a href="careers.html" class="mobile-link flex items-center gap-4 p-4 rounded-xl hover:bg-slate-50">
-                <i data-feather="briefcase" class="w-5 h-5 text-brand-primary"></i>
-                <span class="font-semibold">Careers</span>
-            </a>
-            <a href="whatsnew.html" class="mobile-link flex items-center gap-4 p-4 rounded-xl bg-blue-50 border border-blue-100">
-                <i data-feather="bell" class="w-5 h-5 text-brand-primary"></i>
-                <span class="font-semibold text-brand-primary">What's New</span>
-            </a>
+        <div class="flex-1 p-6 space-y-4">
+            <a href="index.html" class="mobile-link flex items-center gap-4 p-4 rounded-xl hover:bg-slate-50"><i data-feather="home" class="text-brand-primary"></i> Home</a>
+            <a href="careers.html" class="mobile-link flex items-center gap-4 p-4 rounded-xl hover:bg-slate-50"><i data-feather="briefcase" class="text-brand-primary"></i> Careers</a>
+            <a href="index.html#calculator" class="mobile-link flex items-center gap-4 p-4 rounded-xl hover:bg-slate-50"><i data-feather="percent" class="text-brand-primary"></i> Calculator</a>
         </div>
     </div>
-
-    <!-- Navigation -->
-    <header id="main-header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent py-4">
+    <header id="main-header" class="fixed w-full top-0 z-50 bg-transparent py-4 transition-all duration-300">
         <nav class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-2 group">
-                <div class="w-10 h-10 bg-brand-primary text-white rounded-xl flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
-                    <span class="font-serif font-bold text-2xl">M</span>
-                </div>
-                <span class="text-2xl font-serif font-bold text-slate-900 tracking-tight">Mallu<span class="text-brand-primary">Finance</span></span>
+            <a href="index.html" class="flex items-center gap-2 group relative z-50">
+                <div class="w-10 h-10 bg-brand-primary text-white rounded-xl flex items-center justify-center shadow-lg">M</div>
+                <span class="text-2xl font-serif font-bold text-slate-900">Mallu<span class="text-brand-primary">Finance</span></span>
             </a>
-            
             <ul class="hidden md:flex items-center gap-8 font-medium text-slate-600 text-sm tracking-wide">
-                <li><a href="index.html" class="hover:text-brand-primary transition-colors py-2 relative group">Home<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all group-hover:w-full"></span></a></li>
-                <li><a href="careers.html" class="hover:text-brand-primary transition-colors py-2 relative group">Careers<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all group-hover:w-full"></span></a></li>
-                <li><a href="whatsnew.html" class="text-brand-primary font-bold">What's New</a></li>
-                <li>
-                    <a href="https://wee.bnking.in/c/YmMxOTNkO" target="_blank" class="bg-slate-900 text-white px-6 py-2.5 rounded-full font-bold hover:bg-brand-primary transition-all shadow-lg">
-                        Apply Now
-                    </a>
-                </li>
+                <li><a href="index.html" class="hover:text-brand-primary">Home</a></li>
+                <li><a href="careers.html" class="hover:text-brand-primary">Careers</a></li>
+                <li><a href="index.html#calculator" class="hover:text-brand-primary">Calculator</a></li>
+                <li><a href="index.html#contact" class="bg-slate-900 text-white px-6 py-2.5 rounded-full hover:bg-brand-primary transition-all">Contact</a></li>
             </ul>
-
-            <button id="mobile-toggle" class="md:hidden text-slate-900 p-2">
-                <i data-feather="menu" class="w-6 h-6"></i>
-            </button>
+            <button id="mobile-toggle" class="md:hidden text-slate-900 p-2"><i data-feather="menu" class="w-6 h-6"></i></button>
         </nav>
     </header>
-
     <main>
-        <!-- Hero Header -->
         <section class="pt-40 pb-20 px-6 bg-slate-900 text-white relative overflow-hidden">
-            <!-- Animated Blobs -->
-            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-primary/20 rounded-full blur-[120px] -translate-y-1/2 animate-blob"></div>
-            <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-purple-600/10 rounded-full blur-[100px] translate-y-1/2 animate-blob animation-delay-2000"></div>
-            
             <div class="max-w-4xl mx-auto text-center reveal-on-scroll relative z-10">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/10 mb-8">
-                    <span class="flex h-2 w-2">
-                        <span class="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-brand-accent opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-accent"></span>
-                    </span>
-                    <span class="text-xs font-bold uppercase tracking-widest text-slate-300">Platform Roadmap</span>
-                </div>
-                <h1 class="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight">Continuous <br><span class="text-brand-accent">Innovation</span></h1>
-                <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">Explore the latest features, partnerships, and design upgrades that make Mallu Finance your premium financial partner.</p>
+                <h1 class="text-5xl md:text-7xl font-serif font-bold mb-6">Continuous <span class="text-brand-accent">Innovation</span></h1>
+                <p class="text-slate-400 text-lg md:text-xl leading-relaxed">Explore the latest features and upgrades that make us your premium financial partner.</p>
             </div>
         </section>
-
-        <!-- Timeline Section -->
         <section class="py-24 bg-white">
             <div class="max-w-5xl mx-auto px-6">
                 <div class="relative">
-                    <!-- Vertical Center Line -->
                     <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-slate-200 md:-ml-px"></div>
-
                     <div class="space-y-24">
-                        
-                        <!-- Update 1: Design System Refresh (Latest) -->
                         <div class="relative flex flex-col md:flex-row items-start md:items-center reveal-on-scroll">
-                            <div class="absolute left-0 md:left-1/2 top-0 -ml-[11px] md:-ml-3 w-6 h-6 rounded-full bg-brand-primary border-4 border-white shadow-lg ring-4 ring-blue-50 z-10"></div>
+                            <div class="absolute left-0 md:left-1/2 top-0 -ml-[11px] md:-ml-3 w-6 h-6 rounded-full bg-brand-primary border-4 border-white shadow-lg z-10"></div>
                             <div class="md:w-1/2 md:pr-16 pl-10 md:pl-0 md:text-right">
-                                <span class="text-brand-primary font-bold text-sm uppercase tracking-widest">February 2025</span>
+                                <span class="text-brand-primary font-bold text-sm uppercase">February 2025</span>
                                 <h3 class="text-2xl font-serif font-bold text-slate-900 mt-2">Premium Design Language v2.0</h3>
                             </div>
                             <div class="md:w-1/2 md:pl-16 pl-10 mt-4 md:mt-0">
                                 <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:bg-white transition-all">
-                                    <p class="text-slate-600 leading-relaxed mb-4">We've introduced a sophisticated UI refresh focusing on glassmorphism, fluid animations, and a refined typography scale for better readability.</p>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="px-3 py-1 bg-blue-100 text-brand-primary text-[10px] font-bold rounded-lg uppercase">Tailwind CSS</span>
-                                        <span class="px-3 py-1 bg-purple-100 text-purple-600 text-[10px] font-bold rounded-lg uppercase">Glassmorphism</span>
-                                    </div>
+                                    <p class="text-slate-600"> Sophisticated UI refresh with fluid animations and refined typography scale for better readability.</p>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Update 2: EMI Calculator -->
                         <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center reveal-on-scroll">
                             <div class="absolute left-0 md:left-1/2 top-0 -ml-[11px] md:-ml-3 w-6 h-6 rounded-full bg-slate-400 border-4 border-white shadow-md z-10"></div>
                             <div class="md:w-1/2 md:pl-16 pl-10">
-                                <span class="text-slate-500 font-bold text-sm uppercase tracking-widest">January 2025</span>
+                                <span class="text-slate-500 font-bold text-sm uppercase">January 2025</span>
                                 <h3 class="text-2xl font-serif font-bold text-slate-900 mt-2">Advanced EMI Calculator</h3>
                             </div>
                             <div class="md:w-1/2 md:pr-16 pl-10 mt-4 md:mt-0">
                                 <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:bg-white transition-all">
-                                    <p class="text-slate-600 leading-relaxed mb-4">Integrated a real-time interest calculation engine with dynamic slider feedback to help customers plan their loans accurately.</p>
-                                    <a href="index.html#calculator" class="text-brand-primary font-bold text-sm flex items-center gap-2">Try Calculator <i data-feather="arrow-right" class="w-4 h-4"></i></a>
+                                    <p class="text-slate-600">Real-time interest calculation engine with dynamic slider feedback for accurate planning.</p>
+                                    <a href="index.html#calculator" class="text-brand-primary font-bold text-sm flex items-center gap-2 mt-4">Try it now <i data-feather="arrow-right" class="w-4 h-4"></i></a>
                                 </div>
                             </div>
                         </div>
-
-                         <!-- Update 3: Careers Portal -->
-                         <div class="relative flex flex-col md:flex-row items-start md:items-center reveal-on-scroll">
-                            <div class="absolute left-0 md:left-1/2 top-0 -ml-[11px] md:-ml-3 w-6 h-6 rounded-full bg-slate-400 border-4 border-white shadow-md z-10"></div>
-                            <div class="md:w-1/2 md:pr-16 pl-10 md:pl-0 md:text-right">
-                                <span class="text-slate-500 font-bold text-sm uppercase tracking-widest">December 2024</span>
-                                <h3 class="text-2xl font-serif font-bold text-slate-900 mt-2">Interactive Career Hub</h3>
-                            </div>
-                            <div class="md:w-1/2 md:pl-16 pl-10 mt-4 md:mt-0">
-                                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:bg-white transition-all">
-                                    <p class="text-slate-600 leading-relaxed mb-4">Launched our native careers page to directly recruit top financial talent. Streamlined the application process via professional email channels.</p>
-                                    <a href="careers.html" class="text-brand-primary font-bold text-sm flex items-center gap-2">Join the Team <i data-feather="arrow-right" class="w-4 h-4"></i></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Update 4: Snowfall & Seasonal -->
-                        <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center reveal-on-scroll">
-                            <div class="absolute left-0 md:left-1/2 top-0 -ml-[11px] md:-ml-3 w-6 h-6 rounded-full bg-slate-400 border-4 border-white shadow-md z-10"></div>
-                            <div class="md:w-1/2 md:pl-16 pl-10">
-                                <span class="text-slate-500 font-bold text-sm uppercase tracking-widest">November 2024</span>
-                                <h3 class="text-2xl font-serif font-bold text-slate-900 mt-2">Seasonal Experience Engine</h3>
-                            </div>
-                            <div class="md:w-1/2 md:pr-16 pl-10 mt-4 md:mt-0">
-                                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl hover:bg-white transition-all">
-                                    <p class="text-slate-600 leading-relaxed mb-4">Added a high-performance particles system to deliver seasonal snowfall effects without compromising web performance or accessibility.</p>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- CTA Section -->
-        <section class="py-24 bg-slate-50">
-            <div class="max-w-4xl mx-auto px-6 text-center reveal-on-scroll">
-                <div class="bg-white rounded-[3rem] p-12 md:p-20 shadow-2xl shadow-blue-500/5 border border-slate-100">
-                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-slate-900 mb-6">Stay Connected</h2>
-                    <p class="text-slate-500 text-lg mb-10 max-w-xl mx-auto">Join our newsletter to receive the latest banking insights and platform updates directly in your inbox.</p>
-                    <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                        <input type="email" placeholder="Enter your email" class="flex-1 px-6 py-4 rounded-full bg-slate-50 border border-slate-200 focus:border-brand-primary outline-none">
-                        <button class="px-8 py-4 bg-slate-900 text-white rounded-full font-bold hover:bg-brand-primary transition-all shadow-lg">
-                            Subscribe
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </section>
     </main>
-
-    <footer class="bg-slate-900 text-white border-t border-slate-800 py-12">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <div class="flex items-center justify-center gap-2 mb-8">
-                <div class="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center">
-                    <span class="font-serif font-bold text-lg text-white">M</span>
-                </div>
-                <span class="text-xl font-serif font-bold">Mallu<span class="text-brand-primary">Finance</span></span>
-            </div>
-            <p class="text-slate-500 text-sm">&copy; 2025 Mallu Finance. Licensed Financial Partner. All rights reserved.</p>
-        </div>
+    <footer class="bg-slate-900 text-white py-12 px-6 text-center text-slate-500 text-sm">
+        <p>&copy; 2025 Mallu Finance. All rights reserved.</p>
     </footer>
-
     <script src="script.js"></script>
 </body>
 </html>

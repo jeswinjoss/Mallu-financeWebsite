@@ -10,10 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileLinks = document.querySelectorAll('.mobile-link');
     const header = document.getElementById('main-header');
-    const loadingOverlay = document.getElementById('loading-overlay');
-    const errorPopup = document.getElementById('error-popup');
-    const closeErrorBtn = document.getElementById('close-error');
-    const applyLinks = document.querySelectorAll('.apply-link');
     const initialLoader = document.getElementById('initial-loader');
 
     // -- Snowfall Logic --
@@ -28,11 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
             snowflake.textContent = '❄️';
             snowflake.classList.add('snowflake');
             
-            // Randomize properties
             snowflake.style.left = Math.random() * 100 + 'vw';
-            snowflake.style.animationDuration = Math.random() * 5 + 8 + 's'; // 8-13s
+            snowflake.style.animationDuration = Math.random() * 5 + 8 + 's';
             snowflake.style.animationDelay = Math.random() * 5 + 's';
-            snowflake.style.opacity = Math.random() * 0.4 + 0.1; // Faded
+            snowflake.style.opacity = Math.random() * 0.4 + 0.1;
             snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
             
             container.appendChild(snowflake);
@@ -46,8 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
             initialLoader.classList.add('opacity-0', 'pointer-events-none');
             setTimeout(() => {
                 initialLoader.style.display = 'none';
-            }, 700); // Wait for transition duration
-        }, 3000); // 3 seconds duration as requested
+            }, 700);
+        }, 2000);
     }
 
     // -- Scroll Reveal Animation --
@@ -121,12 +116,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const r = parseFloat(rateInput.value) / 12 / 100;
         const n = parseFloat(tenureInput.value) * 12;
 
-        // Update UI Text
         if (amountDisplay) amountDisplay.innerText = formatCurrency(P);
         if (rateDisplay) rateDisplay.innerText = rateInput.value;
         if (tenureDisplay) tenureDisplay.innerText = tenureInput.value;
 
-        // Calculation
         let emi = 0;
         if (r === 0) {
              emi = P / n;
@@ -137,12 +130,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalPayment = emi * n;
         const totalInterest = totalPayment - P;
 
-        // Update Results
         if (emiOutput) emiOutput.innerText = formatCurrency(Math.round(emi));
         if (interestOutput) interestOutput.innerText = formatCurrency(Math.round(totalInterest));
         if (totalOutput) totalOutput.innerText = formatCurrency(Math.round(totalPayment));
         
-        // Update slider background gradient for visual feedback
         updateSliderTrack(amountInput);
         updateSliderTrack(rateInput);
         updateSliderTrack(tenureInput);
@@ -154,7 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const max = input.max ? parseFloat(input.max) : 100;
         const val = parseFloat(input.value);
         const percentage = ((val - min) / (max - min)) * 100;
-        
         input.style.background = `linear-gradient(to right, #2563eb ${percentage}%, #e2e8f0 ${percentage}%)`;
     }
 
@@ -163,49 +153,5 @@ document.addEventListener('DOMContentLoaded', () => {
             input.addEventListener('input', calculateEMI);
         });
         calculateEMI();
-    }
-
-    // -- Link Handling --
-    applyLinks.forEach(link => {
-        link.addEventListener('click', async (e) => {
-            const targetUrl = link.getAttribute('href');
-            if (targetUrl.startsWith('#')) return;
-            
-            e.preventDefault();
-            if (loadingOverlay) {
-                loadingOverlay.classList.remove('hidden');
-                loadingOverlay.classList.remove('opacity-0');
-            }
-            
-            // Simulate network request
-            await new Promise(resolve => setTimeout(resolve, 1200));
-
-            try {
-                if (!navigator.onLine) throw new Error("Offline");
-                
-                const isNewTab = link.target === '_blank';
-                if (isNewTab) {
-                    window.open(targetUrl, '_blank');
-                    if (loadingOverlay) {
-                        loadingOverlay.classList.add('opacity-0');
-                        setTimeout(() => loadingOverlay.classList.add('hidden'), 300);
-                    }
-                } else {
-                    window.location.href = targetUrl;
-                }
-            } catch (err) {
-                 if (loadingOverlay) {
-                     loadingOverlay.classList.add('opacity-0');
-                     setTimeout(() => loadingOverlay.classList.add('hidden'), 300);
-                 }
-                 if (errorPopup) errorPopup.classList.remove('hidden');
-            }
-        });
-    });
-
-    if (closeErrorBtn && errorPopup) {
-        closeErrorBtn.addEventListener('click', () => {
-            errorPopup.classList.add('hidden');
-        });
     }
 });

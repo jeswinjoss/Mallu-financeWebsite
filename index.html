@@ -79,6 +79,14 @@
                     <div class="w-10 h-10 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center text-brand-primary group-hover:scale-110 transition-transform"><i data-feather="grid" class="w-5 h-5"></i></div>
                     <span class="font-semibold text-lg text-slate-700 group-hover:text-brand-primary">Services</span>
                 </a>
+                <a href="#calculator" class="mobile-link flex items-center gap-4 p-4 rounded-xl hover:bg-blue-50 transition-colors group">
+                    <div class="w-10 h-10 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center text-brand-primary group-hover:scale-110 transition-transform"><i data-feather="percent" class="w-5 h-5"></i></div>
+                    <span class="font-semibold text-lg text-slate-700 group-hover:text-brand-primary">Calculator</span>
+                </a>
+                <a href="whatsnew.html" class="mobile-link flex items-center gap-4 p-4 rounded-xl hover:bg-blue-50 transition-colors group">
+                    <div class="w-10 h-10 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center text-brand-primary group-hover:scale-110 transition-transform"><i data-feather="bell" class="w-5 h-5"></i></div>
+                    <span class="font-semibold text-lg text-slate-700 group-hover:text-brand-primary">What's New</span>
+                </a>
                 <a href="careers.html" class="mobile-link flex items-center gap-4 p-4 rounded-xl hover:bg-blue-50 transition-colors group">
                     <div class="w-10 h-10 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center text-brand-primary group-hover:scale-110 transition-transform"><i data-feather="briefcase" class="w-5 h-5"></i></div>
                     <span class="font-semibold text-lg text-slate-700 group-hover:text-brand-primary">Careers</span>
@@ -101,8 +109,9 @@
                 </div>
                 <span class="text-2xl font-serif font-bold text-slate-900 tracking-tight">Mallu<span class="text-brand-primary">Finance</span></span>
             </a>
-            <ul class="hidden md:flex items-center gap-8 font-medium text-slate-600 text-sm tracking-wide">
+            <ul class="hidden md:flex items-center gap-6 lg:gap-8 font-medium text-slate-600 text-sm tracking-wide">
                 <li><a href="index.html#home" class="hover:text-brand-primary transition-colors py-2 relative group">Home<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all group-hover:w-full"></span></a></li>
+                <li><a href="whatsnew.html" class="hover:text-brand-primary transition-colors py-2 relative group">What's New<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all group-hover:w-full"></span></a></li>
                 <li><a href="careers.html" class="hover:text-brand-primary transition-colors py-2 relative group">Careers<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all group-hover:w-full"></span></a></li>
                 <li><a href="index.html#contact" class="hover:text-brand-primary transition-colors py-2 relative group">Contact<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all group-hover:w-full"></span></a></li>
                 <li class="relative group h-full flex items-center">
@@ -113,17 +122,14 @@
                                 <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-brand-primary"><i data-feather="grid" class="w-4 h-4"></i></div>
                                 <span class="font-medium">Services</span>
                             </a>
-                            <a href="whatsnew.html" class="p-3 rounded-xl hover:bg-slate-50 hover:text-brand-primary flex items-center gap-3 transition-colors">
-                                <div class="w-8 h-8 rounded-lg bg-purple-50 flex items-center justify-center text-purple-600"><i data-feather="bell" class="w-4 h-4"></i></div>
-                                <div class="flex-1 flex justify-between items-center">
-                                    <span class="font-medium">What's New</span>
-                                    <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
-                                </div>
+                            <a href="index.html#calculator" class="p-3 rounded-xl hover:bg-slate-50 hover:text-brand-primary flex items-center gap-3 transition-colors">
+                                <div class="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center text-green-600"><i data-feather="percent" class="w-4 h-4"></i></div>
+                                <span class="font-medium">EMI Calculator</span>
                             </a>
                         </div>
                     </div>
                 </li>
-                <li><a href="https://wee.bnking.in/c/YmMxOTNkO" target="_blank" class="apply-link bg-slate-900 hover:bg-brand-primary text-white px-6 py-2.5 rounded-full transition-all shadow-lg hover:shadow-blue-500/30 font-semibold tracking-wide flex items-center gap-2 transform hover:-translate-y-0.5">Apply Now <i data-feather="arrow-right" class="w-4 h-4"></i></a></li>
+                <li><a href="https://wee.bnking.in/c/YmMxOTNkO" target="_blank" class="apply-link bg-slate-900 hover:bg-brand-primary text-white px-6 py-2.5 rounded-full transition-all shadow-lg hover:shadow-blue-500/30 font-semibold tracking-wide flex items-center gap-2 transform hover:-translate-y-0.5 whitespace-nowrap">Apply Now <i data-feather="arrow-right" class="w-4 h-4"></i></a></li>
             </ul>
             <button id="mobile-toggle" class="md:hidden text-slate-900 focus:outline-none p-2 rounded-lg hover:bg-slate-100 transition-colors z-50" aria-label="Toggle Menu"><i data-feather="menu" class="w-6 h-6"></i></button>
         </nav>
@@ -138,8 +144,8 @@
                     <span class="flex h-2 w-2 relative"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span></span>
                     <span class="text-sm font-semibold text-slate-600">Trusted by 10,000+ Customers</span>
                 </div>
-                <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-slate-900 leading-[1.1] mb-8 tracking-tight">Your Gateway to <br><span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent">Financial Freedom</span></h1>
-                <p class="text-lg md:text-xl text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed">Bridge the gap between your dreams and reality. We connect you with India's leading banks for loans, credit cards, and investments.</p>
+                <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-slate-900 leading-[1.1] mb-8 tracking-tight">Your Gateway to <br><span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent">Financial Freedom</span></h1>
+                <p class="text-base md:text-xl text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed">Bridge the gap between your dreams and reality. We connect you with India's leading banks for loans, credit cards, and investments.</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <a href="https://wee.bnking.in/c/YmMxOTNkO" target="_blank" class="apply-link px-8 py-4 bg-brand-primary text-white rounded-full font-bold text-lg hover:bg-brand-dark transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 w-full sm:w-auto">Get Started</a>
                     <a href="#services" class="px-8 py-4 bg-white/80 text-slate-700 border border-slate-200 rounded-full font-bold text-lg hover:border-brand-primary hover:text-brand-primary transition-all hover:bg-white backdrop-blur-sm w-full sm:w-auto">Explore Services</a>
@@ -152,7 +158,7 @@
                     <h2 class="text-3xl md:text-5xl font-serif font-bold text-slate-900 mb-4">Premium Services</h2>
                     <p class="text-slate-500 text-lg max-w-2xl mx-auto">Tailored financial products designed for your personal and business growth.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="group p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:border-brand-primary/20 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2 transition-all duration-300 reveal-on-scroll">
                         <div class="w-16 h-16 bg-blue-100 text-brand-primary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300"><i data-feather="home" class="w-8 h-8"></i></div>
                         <h3 class="text-xl font-bold mb-3 text-slate-900">Personal Loans</h3>
@@ -201,47 +207,111 @@
                                     <label class="font-medium text-slate-500 text-sm uppercase tracking-wide" for="interest-rate">Interest Rate</label>
                                     <div class="bg-blue-50 px-4 py-2 rounded-xl text-brand-primary font-bold text-xl"><span id="rate-display">10.5</span>%</div>
                                 </div>
-                                <input type="range" id="interest-rate" min="1" max="50" step="0.1" value="10.5" class="w-full h-3 bg-slate-200 rounded-full appearance-none cursor-pointer">
+                                <input type="range" id="interest-rate" min="5" max="30" step="0.1" value="10.5" class="w-full h-3 bg-slate-200 rounded-full appearance-none cursor-pointer">
+                            </div>
+                            <div class="group">
+                                <div class="flex justify-between mb-4 items-end">
+                                    <label class="font-medium text-slate-500 text-sm uppercase tracking-wide" for="loan-tenure">Tenure (Years)</label>
+                                    <div class="bg-blue-50 px-4 py-2 rounded-xl text-brand-primary font-bold text-xl"><span id="tenure-display">5</span>Y</div>
+                                </div>
+                                <input type="range" id="loan-tenure" min="1" max="30" step="1" value="5" class="w-full h-3 bg-slate-200 rounded-full appearance-none cursor-pointer">
                             </div>
                         </div>
                     </div>
-                    <div class="bg-slate-900 p-8 md:p-14 lg:w-2/5 text-white flex flex-col justify-center relative overflow-hidden">
-                         <div class="relative z-10 space-y-8">
-                            <div>
-                                <p class="text-slate-400 text-sm font-medium uppercase tracking-widest mb-2">Monthly EMI</p>
-                                <p class="text-5xl font-bold text-white tracking-tight">₹<span id="emi-output">2,149</span></p>
-                            </div>
-                            <a href="https://wee.bnking.in/c/YmMxOTNkO" target="_blank" class="apply-link group w-full mt-6 flex items-center justify-center gap-2 py-4 bg-brand-primary text-white font-bold rounded-xl hover:bg-blue-600 transition-all shadow-lg">Apply Now</a>
+                    <div class="lg:w-2/5 bg-slate-900 p-8 md:p-14 text-white flex flex-col justify-center space-y-10">
+                        <div>
+                            <p class="text-slate-400 text-sm uppercase tracking-widest mb-2">Monthly EMI</p>
+                            <h3 class="text-5xl md:text-6xl font-serif font-bold text-brand-accent">₹<span id="emi-output">0</span></h3>
                         </div>
+                        <div class="space-y-4 pt-10 border-t border-slate-800">
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Total Interest</span>
+                                <span class="font-bold">₹<span id="interest-output">0</span></span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Total Repayment</span>
+                                <span class="font-bold text-xl text-brand-accent">₹<span id="total-output">0</span></span>
+                            </div>
+                        </div>
+                        <a href="https://wee.bnking.in/c/YmMxOTNkO" target="_blank" class="apply-link w-full py-4 bg-white text-slate-900 rounded-2xl font-bold text-center hover:bg-brand-accent hover:text-white transition-all shadow-xl shadow-black/20">Apply for Loan</a>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="contact" class="py-24 px-6 relative">
-            <div class="max-w-2xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 reveal-on-scroll">
-                <div class="p-8 md:p-12 text-center">
-                    <h2 class="text-3xl font-serif font-bold text-slate-900 mb-2">Get in Touch</h2>
-                    <p class="text-slate-500 mb-8">Have questions? Email us directly or fill our form.</p>
-                    <a href="mailto:info@themallu.online" class="inline-flex items-center gap-2 px-6 py-3 bg-blue-50 text-brand-primary rounded-xl font-bold hover:bg-blue-100 transition-all">info@themallu.online</a>
+        <section id="contact" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16">
+                    <div class="reveal-on-scroll">
+                        <h2 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6">Connect with our experts</h2>
+                        <p class="text-slate-500 text-lg mb-10 leading-relaxed">Have specific financial goals? Let our advisors guide you through the best products available in the market. We're here to help you grow.</p>
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-blue-50 text-brand-primary rounded-xl flex items-center justify-center"><i data-feather="mail" class="w-6 h-6"></i></div>
+                                <div><p class="text-sm text-slate-400 uppercase font-bold tracking-wider">Email Us</p><a href="mailto:careers@themallu.online" class="text-lg font-bold hover:text-brand-primary">careers@themallu.online</a></div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 bg-green-50 text-green-600 rounded-xl flex items-center justify-center"><i data-feather="message-circle" class="w-6 h-6"></i></div>
+                                <div><p class="text-sm text-slate-400 uppercase font-bold tracking-wider">WhatsApp</p><a href="https://wa.me/918113824419" target="_blank" class="text-lg font-bold hover:text-green-600">+91 81138 24419</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 p-8 md:p-10 rounded-3xl border border-slate-200 reveal-on-scroll">
+                         <form class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-sm font-bold text-slate-600 uppercase tracking-wide">Your Name</label>
+                                    <input type="text" class="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 focus:border-brand-primary outline-none transition-all">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-sm font-bold text-slate-600 uppercase tracking-wide">Phone Number</label>
+                                    <input type="tel" class="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 focus:border-brand-primary outline-none transition-all">
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-sm font-bold text-slate-600 uppercase tracking-wide">Service Interested In</label>
+                                <select class="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 focus:border-brand-primary outline-none transition-all">
+                                    <option>Personal Loan</option>
+                                    <option>Credit Cards</option>
+                                    <option>Demat Account</option>
+                                    <option>Business Loan</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="w-full py-4 bg-brand-primary text-white rounded-xl font-bold hover:bg-brand-dark transition-all shadow-lg">Send Message</button>
+                         </form>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
-    <footer class="bg-slate-900 text-white border-t border-slate-800 py-12">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="flex items-center gap-3">
-                     <div class="w-10 h-10 bg-brand-primary rounded-lg flex items-center justify-center relative"><span class="font-serif font-bold text-xl">M</span></div>
-                    <span class="text-2xl font-serif font-bold">Mallu<span class="text-brand-primary">Finance</span></span>
+    <footer class="bg-slate-900 text-white py-16 px-6 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                         <div class="w-10 h-10 bg-brand-primary rounded-xl flex items-center justify-center text-2xl font-serif font-bold">M</div>
+                         <span class="text-2xl font-serif font-bold">Mallu<span class="text-brand-primary">Finance</span></span>
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-8 leading-relaxed">Empowering individuals with transparent, fast, and secure financial solutions across India. Join thousands who trust us for their wealth journey.</p>
                 </div>
-                <div class="flex gap-8 text-slate-400 font-medium">
-                    <a href="privacypolicy.html" class="hover:text-white transition-colors">Privacy</a>
-                    <a href="terms.html" class="hover:text-white transition-colors">Terms</a>
-                    <a href="mailto:info@themallu.online" class="hover:text-white transition-colors">Support</a>
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li><a href="index.html#home" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="index.html#services" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="whatsnew.html" class="hover:text-white transition-colors">What's New</a></li>
+                        <li><a href="careers.html" class="hover:text-white transition-colors">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Legal</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li><a href="privacypolicy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="border-t border-slate-800 mt-10 pt-10 text-center">
-                <p class="text-slate-500 text-sm">&copy; 2025 Mallu Finance. Licensed Financial Partner. All rights reserved.</p>
+            <div class="pt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
+                <p>&copy; 2025 Mallu Finance. All rights reserved. Registered Financial Referral Partner.</p>
             </div>
         </div>
     </footer>
