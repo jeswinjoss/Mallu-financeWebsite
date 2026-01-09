@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,55 +8,35 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="styles.css">
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
-                    colors: { brand: { dark: '#0B1120', primary: '#2563EB', secondary: '#4F46E5', accent: '#0EA5E9' } }
-                }
-            }
-        }
+        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], serif: ['Playfair Display', 'serif'] }, colors: { brand: { dark: '#0f172a', primary: '#2563EB', secondary: '#4F46E5', accent: '#38bdf8', surface: '#f8fafc' } } } } }
     </script>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-primary selection:text-white">
-    <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm py-4">
-        <nav class="max-w-7xl mx-auto px-6 h-10 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-2 group">
-                <div class="w-8 h-8 bg-brand-primary text-white rounded-lg flex items-center justify-center shadow-lg"><span class="font-serif font-bold text-xl">M</span></div>
-                <span class="text-xl font-serif font-bold text-slate-900 tracking-tight">Mallu<span class="text-brand-primary">Finance</span></span>
+<body class="bg-brand-surface text-slate-800 antialiased">
+    <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm h-16 flex items-center">
+        <nav class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-brand-primary text-white rounded-lg flex items-center justify-center font-serif font-bold">M</div>
+                <span class="text-xl font-serif font-bold text-slate-900">Mallu<span class="text-brand-primary">Finance</span></span>
             </a>
-            <a href="index.html" class="text-brand-primary font-bold text-sm flex items-center gap-1"><i data-feather="arrow-left" class="w-4 h-4"></i> Back to Home</a>
+            <a href="index.html" class="text-sm font-bold text-slate-600 hover:text-brand-primary transition-colors flex items-center gap-1"><i data-feather="arrow-left" class="w-4 h-4"></i> Back Home</a>
         </nav>
     </header>
     <main class="pt-32 pb-20 px-6">
-        <div class="max-w-4xl mx-auto bg-white p-8 md:p-16 rounded-[2.5rem] shadow-xl border border-slate-100">
-            <h1 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-8">Terms of Service</h1>
-            <div class="prose prose-slate max-w-none space-y-6 text-slate-600">
-                <p class="font-medium">Last Updated: January 2025</p>
-                <section class="space-y-4">
-                    <h2 class="text-2xl font-bold text-slate-900">1. Terms</h2>
-                    <p>By accessing Mallu Finance, you agree to be bound by these terms of service, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws.</p>
-                </section>
-                <section class="space-y-4">
-                    <h2 class="text-2xl font-bold text-slate-900">2. Use License</h2>
-                    <p>Permission is granted to temporarily download one copy of the materials on Mallu Finance's website for personal, non-commercial transitory viewing only.</p>
-                </section>
-                <section class="space-y-4">
-                    <h2 class="text-2xl font-bold text-slate-900">3. Disclaimer</h2>
-                    <p>Mallu Finance is a referral service. We do not provide loans directly but facilitate connections with licensed financial institutions. All approvals are subject to bank terms.</p>
-                </section>
-                <section class="space-y-4">
-                    <h2 class="text-2xl font-bold text-slate-900">4. Limitation of Liability</h2>
-                    <p>In no event shall Mallu Finance or its partners be liable for any damages arising out of the use or inability to use the materials on the website.</p>
-                </section>
+        <div class="max-w-3xl mx-auto bg-white p-12 rounded-[2.5rem] shadow-xl border border-slate-100 reveal-on-scroll">
+            <h1 class="text-4xl font-serif font-bold mb-8 text-slate-900">Terms of Service</h1>
+            <div class="prose prose-slate max-w-none text-slate-600">
+                <h3 class="text-xl font-bold text-slate-800 mb-3">General Terms</h3>
+                <p class="mb-6">By accessing this website, you agree to be bound by these terms. Mallu Finance acts as a lead generator and referral partner for various banks and financial institutions.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Liability</h3>
+                <p class="mb-6">We do not issue loans or credit cards directly. Approval is at the sole discretion of the respective financial institution. We are not liable for rejections or specific terms offered by banks.</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Usage</h3>
+                <p class="mb-6">You agree to provide accurate information during the application process. Misrepresentation may lead to rejection of services.</p>
             </div>
         </div>
     </main>
-    <footer class="bg-slate-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-6 text-center text-slate-500 text-sm">
-            <p>&copy; 2025 Mallu Finance. All rights reserved.</p>
-        </div>
+    <footer class="bg-brand-dark text-slate-400 py-8 text-center text-sm">
+        <p>&copy; 2025 Mallu Finance. All rights reserved.</p>
     </footer>
-    <script>feather.replace();</script>
+    <script src="script.js"></script>
 </body>
 </html>

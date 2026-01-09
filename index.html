@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mallu Finance - Professional financial solutions including personal loans, credit cards, and demat accounts in India.">
-    <title>Mallu Finance | Professional Financial Solutions</title>
+    <meta name="description" content="Mallu Finance - Professional financial solutions in India.">
+    <title>Mallu Finance | Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
@@ -15,303 +15,228 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
+                    colors: { 
+                        brand: { 
+                            dark: '#0f172a', 
+                            primary: '#2563EB', 
+                            secondary: '#4F46E5', 
+                            accent: '#38bdf8', 
+                            surface: '#f8fafc' 
+                        } 
                     },
-                    colors: {
-                        brand: {
-                            dark: '#0B1120', 
-                            primary: '#2563EB',
-                            secondary: '#4F46E5',
-                            accent: '#0EA5E9',
-                        }
-                    },
-                    animation: {
-                        'blob': 'blob 7s infinite',
-                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-                    },
-                    keyframes: {
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
-                        },
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        }
-                    }
+                    animation: { 'float': 'float 6s ease-in-out infinite' },
+                    keyframes: { float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-20px)' } } }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden relative selection:bg-brand-primary selection:text-white">
-    <div id="snow-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true"></div>
+<body class="bg-brand-surface text-slate-800 antialiased selection:bg-brand-primary selection:text-white">
     <div id="initial-loader" class="fixed inset-0 z-[200] bg-white flex flex-col items-center justify-center transition-opacity duration-700">
-        <div class="text-center opacity-0 animate-fade-in-up flex flex-col items-center" style="animation-fill-mode: forwards;">
-             <div class="w-24 h-24 bg-brand-primary text-white rounded-3xl flex items-center justify-center mb-6 shadow-2xl shadow-blue-500/20">
-                <span class="font-serif font-bold text-5xl">M</span>
+        <div class="text-center flex flex-col items-center">
+             <div class="w-20 h-20 bg-brand-primary text-white rounded-2xl flex items-center justify-center mb-6 shadow-xl shadow-blue-500/20">
+                <span class="font-serif font-bold text-4xl">M</span>
             </div>
-            <h1 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 tracking-tight mb-2">Mallu<span class="text-brand-primary">Finance</span></h1>
-            <p class="text-slate-400 font-medium tracking-wide text-sm uppercase animate-pulse">Your trusted partner</p>
+            <div class="w-32 h-1 bg-slate-100 rounded-full overflow-hidden">
+                <div class="h-full bg-brand-primary animate-loading"></div>
+            </div>
         </div>
     </div>
-    <div id="mobile-menu" class="fixed inset-0 bg-white/95 backdrop-blur-xl z-[100] transform translate-x-full transition-transform duration-300 md:hidden flex flex-col shadow-2xl" aria-hidden="true">
-        <div class="flex items-center justify-between p-6 border-b border-slate-100 shrink-0">
-            <div class="flex items-center gap-2">
-                 <span class="text-2xl font-serif font-bold text-slate-900 tracking-tight">Mallu<span class="text-brand-primary">Finance</span></span>
-            </div>
-            <button id="close-menu" class="text-slate-500 p-2 hover:bg-slate-100 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-brand-primary" aria-label="Close Menu">
-                <i data-feather="x" class="w-6 h-6"></i>
-            </button>
-        </div>
-        <div class="flex-1 overflow-y-auto p-6 space-y-6">
-            <nav class="space-y-2">
-                <p class="text-xs font-bold text-slate-400 uppercase tracking-widest px-1 mb-2">Navigation</p>
-                <a href="index.html#home" class="mobile-link flex items-center gap-4 p-4 rounded-xl hover:bg-blue-50 transition-colors group">
-                    <div class="w-10 h-10 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center text-brand-primary group-hover:scale-110 transition-transform"><i data-feather="home" class="w-5 h-5"></i></div>
-                    <span class="font-semibold text-lg text-slate-700 group-hover:text-brand-primary">Home</span>
-                </a>
-                <a href="index.html#services" class="mobile-link flex items-center gap-4 p-4 rounded-xl hover:bg-blue-50 transition-colors group">
-                    <div class="w-10 h-10 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center text-brand-primary group-hover:scale-110 transition-transform"><i data-feather="grid" class="w-5 h-5"></i></div>
-                    <span class="font-semibold text-lg text-slate-700 group-hover:text-brand-primary">Services</span>
-                </a>
-                <a href="#calculator" class="mobile-link flex items-center gap-4 p-4 rounded-xl hover:bg-blue-50 transition-colors group">
-                    <div class="w-10 h-10 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center text-brand-primary group-hover:scale-110 transition-transform"><i data-feather="percent" class="w-5 h-5"></i></div>
-                    <span class="font-semibold text-lg text-slate-700 group-hover:text-brand-primary">Calculator</span>
-                </a>
-                <a href="whatsnew.html" class="mobile-link flex items-center gap-4 p-4 rounded-xl hover:bg-blue-50 transition-colors group">
-                    <div class="w-10 h-10 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center text-brand-primary group-hover:scale-110 transition-transform"><i data-feather="bell" class="w-5 h-5"></i></div>
-                    <span class="font-semibold text-lg text-slate-700 group-hover:text-brand-primary">What's New</span>
-                </a>
-                <a href="careers.html" class="mobile-link flex items-center gap-4 p-4 rounded-xl hover:bg-blue-50 transition-colors group">
-                    <div class="w-10 h-10 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center text-brand-primary group-hover:scale-110 transition-transform"><i data-feather="briefcase" class="w-5 h-5"></i></div>
-                    <span class="font-semibold text-lg text-slate-700 group-hover:text-brand-primary">Careers</span>
-                </a>
-                <a href="index.html#contact" class="mobile-link flex items-center gap-4 p-4 rounded-xl hover:bg-blue-50 transition-colors group">
-                    <div class="w-10 h-10 rounded-full bg-white border border-slate-100 shadow-sm flex items-center justify-center text-brand-primary group-hover:scale-110 transition-transform"><i data-feather="mail" class="w-5 h-5"></i></div>
-                    <span class="font-semibold text-lg text-slate-700 group-hover:text-brand-primary">Contact</span>
-                </a>
-            </nav>
-        </div>
-        <div class="p-6 border-t border-slate-100 bg-white">
-             <a href="https://wee.bnking.in/c/YmMxOTNkO" target="_blank" class="apply-link flex items-center justify-center w-full py-4 bg-brand-primary text-white rounded-xl font-bold text-lg shadow-lg shadow-blue-500/30 hover:bg-blue-700 active:scale-95 transition-all">Get Started Now</a>
-        </div>
-    </div>
+
     <header id="main-header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent py-4">
         <nav class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-2 group relative z-50">
-                <div class="w-10 h-10 bg-brand-primary text-white rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-3 transition-transform duration-300">
-                    <span class="font-serif font-bold text-2xl">M</span>
-                </div>
+            <a href="index.html" class="flex items-center gap-2 relative z-50">
+                <div class="w-10 h-10 bg-brand-primary text-white rounded-lg flex items-center justify-center shadow-lg font-serif font-bold text-xl">M</div>
                 <span class="text-2xl font-serif font-bold text-slate-900 tracking-tight">Mallu<span class="text-brand-primary">Finance</span></span>
             </a>
-            <ul class="hidden md:flex items-center gap-6 lg:gap-8 font-medium text-slate-600 text-sm tracking-wide">
-                <li><a href="index.html#home" class="hover:text-brand-primary transition-colors py-2 relative group">Home<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all group-hover:w-full"></span></a></li>
-                <li><a href="whatsnew.html" class="hover:text-brand-primary transition-colors py-2 relative group">What's New<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all group-hover:w-full"></span></a></li>
-                <li><a href="careers.html" class="hover:text-brand-primary transition-colors py-2 relative group">Careers<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all group-hover:w-full"></span></a></li>
-                <li><a href="index.html#contact" class="hover:text-brand-primary transition-colors py-2 relative group">Contact<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-primary transition-all group-hover:w-full"></span></a></li>
-                <li class="relative group h-full flex items-center">
-                    <button class="flex items-center gap-1 hover:text-brand-primary transition-colors focus:outline-none py-2">More <i data-feather="chevron-down" class="w-4 h-4"></i></button>
-                    <div class="absolute top-full -left-12 pt-4 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                        <div class="bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden p-2">
-                            <a href="index.html#services" class="p-3 rounded-xl hover:bg-slate-50 hover:text-brand-primary flex items-center gap-3 transition-colors">
-                                <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center text-brand-primary"><i data-feather="grid" class="w-4 h-4"></i></div>
-                                <span class="font-medium">Services</span>
-                            </a>
-                            <a href="index.html#calculator" class="p-3 rounded-xl hover:bg-slate-50 hover:text-brand-primary flex items-center gap-3 transition-colors">
-                                <div class="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center text-green-600"><i data-feather="percent" class="w-4 h-4"></i></div>
-                                <span class="font-medium">EMI Calculator</span>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li><a href="https://wee.bnking.in/c/YmMxOTNkO" target="_blank" class="apply-link bg-slate-900 hover:bg-brand-primary text-white px-6 py-2.5 rounded-full transition-all shadow-lg hover:shadow-blue-500/30 font-semibold tracking-wide flex items-center gap-2 transform hover:-translate-y-0.5 whitespace-nowrap">Apply Now <i data-feather="arrow-right" class="w-4 h-4"></i></a></li>
+            
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex items-center gap-8 font-medium text-slate-600 text-sm tracking-wide">
+                <li><a href="#home" class="hover:text-brand-primary transition-colors">Home</a></li>
+                <li><a href="#services" class="hover:text-brand-primary transition-colors">Services</a></li>
+                <li><a href="whatsnew.html" class="hover:text-brand-primary transition-colors">What's New</a></li>
+                <li><a href="careers.html" class="hover:text-brand-primary transition-colors">Careers</a></li>
+                <li><a href="https://wee.bnking.in/c/YmMxOTNkO" target="_blank" class="bg-brand-dark hover:bg-brand-primary text-white px-6 py-2.5 rounded-full transition-all shadow-lg shadow-brand-primary/20 hover:shadow-brand-primary/40">Apply Now</a></li>
             </ul>
-            <button id="mobile-toggle" class="md:hidden text-slate-900 focus:outline-none p-2 rounded-lg hover:bg-slate-100 transition-colors z-50" aria-label="Toggle Menu"><i data-feather="menu" class="w-6 h-6"></i></button>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-toggle" class="md:hidden text-slate-900 p-2 relative z-50 hover:bg-slate-100 rounded-lg transition-colors">
+                <i data-feather="menu"></i>
+            </button>
         </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 flex flex-col justify-center items-center gap-8 md:hidden">
+            <a href="#home" class="mobile-link text-2xl font-serif font-bold text-slate-800">Home</a>
+            <a href="#services" class="mobile-link text-2xl font-serif font-bold text-slate-800">Services</a>
+            <a href="whatsnew.html" class="mobile-link text-2xl font-serif font-bold text-slate-800">What's New</a>
+            <a href="careers.html" class="mobile-link text-2xl font-serif font-bold text-slate-800">Careers</a>
+            <a href="https://wee.bnking.in/c/YmMxOTNkO" target="_blank" class="bg-brand-primary text-white px-8 py-3 rounded-full text-xl font-bold shadow-xl">Apply Now</a>
+        </div>
     </header>
+
     <main>
-        <section id="home" class="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden">
-            <div class="absolute top-0 right-0 -z-10 w-[800px] h-[800px] bg-red-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
-            <div class="absolute top-0 left-[-200px] -z-10 w-[600px] h-[600px] bg-green-500/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
-            <div class="absolute -bottom-32 left-20 -z-10 w-[600px] h-[600px] bg-yellow-400/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
-            <div class="max-w-5xl mx-auto text-center reveal-on-scroll">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 border border-slate-200 backdrop-blur-sm shadow-sm mb-8 hover:scale-105 transition-transform cursor-default">
-                    <span class="flex h-2 w-2 relative"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span></span>
-                    <span class="text-sm font-semibold text-slate-600">Trusted by 10,000+ Customers</span>
+        <section id="home" class="relative pt-40 pb-20 lg:pt-52 lg:pb-32 px-6 overflow-hidden bg-white">
+            <!-- Abstract Background -->
+            <div class="absolute top-0 right-0 -z-10 w-[800px] h-[800px] bg-gradient-to-br from-blue-50 to-indigo-50 rounded-full blur-3xl opacity-70 translate-x-1/3 -translate-y-1/4"></div>
+            <div class="absolute bottom-0 left-0 -z-10 w-[600px] h-[600px] bg-gradient-to-tr from-sky-50 to-blue-50 rounded-full blur-3xl opacity-70 -translate-x-1/4 translate-y-1/4"></div>
+            
+            <div class="max-w-6xl mx-auto text-center reveal-on-scroll">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full text-brand-primary text-sm font-semibold mb-8 animate-float">
+                    <span class="w-2 h-2 bg-brand-primary rounded-full"></span>
+                    Trust. Growth. Security.
                 </div>
-                <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-slate-900 leading-[1.1] mb-8 tracking-tight">Your Gateway to <br><span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent">Financial Freedom</span></h1>
-                <p class="text-base md:text-xl text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed">Bridge the gap between your dreams and reality. We connect you with India's leading banks for loans, credit cards, and investments.</p>
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-slate-900 leading-[1.1] mb-8 tracking-tight">
+                    Your Gateway to <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent">Financial Freedom</span>
+                </h1>
+                <p class="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    Connect with India's leading banks for loans and investments through our simplified, secure digital platform.
+                </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="https://wee.bnking.in/c/YmMxOTNkO" target="_blank" class="apply-link px-8 py-4 bg-brand-primary text-white rounded-full font-bold text-lg hover:bg-brand-dark transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 w-full sm:w-auto">Get Started</a>
-                    <a href="#services" class="px-8 py-4 bg-white/80 text-slate-700 border border-slate-200 rounded-full font-bold text-lg hover:border-brand-primary hover:text-brand-primary transition-all hover:bg-white backdrop-blur-sm w-full sm:w-auto">Explore Services</a>
+                    <a href="https://wee.bnking.in/c/YmMxOTNkO" class="w-full sm:w-auto px-8 py-4 bg-brand-primary text-white rounded-full font-bold shadow-xl shadow-blue-500/20 hover:shadow-blue-500/40 hover:-translate-y-1 transition-all duration-300">Get Started</a>
+                    <a href="#calculator" class="w-full sm:w-auto px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-full font-bold hover:bg-slate-50 hover:border-slate-300 transition-all">Calculate EMI</a>
                 </div>
             </div>
         </section>
-        <section id="services" class="py-24 bg-white relative">
+
+        <section id="services" class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-16 reveal-on-scroll">
-                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-slate-900 mb-4">Premium Services</h2>
-                    <p class="text-slate-500 text-lg max-w-2xl mx-auto">Tailored financial products designed for your personal and business growth.</p>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">Our Financial Products</h2>
+                    <p class="text-slate-500">Tailored solutions designed for your growth.</p>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="group p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:border-brand-primary/20 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2 transition-all duration-300 reveal-on-scroll">
-                        <div class="w-16 h-16 bg-blue-100 text-brand-primary rounded-2xl flex items-center justify-center mb-6 group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300"><i data-feather="home" class="w-8 h-8"></i></div>
-                        <h3 class="text-xl font-bold mb-3 text-slate-900">Personal Loans</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-4">Flexible terms and competitive rates from top-tier Indian banks tailored to your needs.</p>
-                        <a href="https://wee.bnking.in/c/YmMxOTNkO" target="_blank" class="text-brand-primary font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">Apply <i data-feather="arrow-right" class="w-4 h-4"></i></a>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="group p-8 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal-on-scroll">
+                        <div class="w-14 h-14 bg-blue-50 text-brand-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"><i data-feather="home"></i></div>
+                        <h3 class="text-xl font-bold mb-2 text-slate-900">Personal Loans</h3>
+                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">Quick approvals with competitive interest rates from top-tier banks.</p>
+                        <a href="https://wee.bnking.in/c/YmMxOTNkO" class="inline-flex items-center text-brand-primary font-bold text-sm hover:gap-2 transition-all">Apply Now <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i></a>
                     </div>
-                    <div class="group p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:border-purple-500/20 hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-2 transition-all duration-300 reveal-on-scroll">
-                        <div class="w-16 h-16 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-300"><i data-feather="credit-card" class="w-8 h-8"></i></div>
-                        <h3 class="text-xl font-bold mb-3 text-slate-900">Credit Cards</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-4">Curated cards featuring airport lounge access, high rewards, and lifetime free options.</p>
-                         <a href="index.html#contact" class="text-purple-600 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">Apply <i data-feather="arrow-right" class="w-4 h-4"></i></a>
+                    <div class="group p-8 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal-on-scroll">
+                        <div class="w-14 h-14 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"><i data-feather="credit-card"></i></div>
+                        <h3 class="text-xl font-bold mb-2 text-slate-900">Credit Cards</h3>
+                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">Unlock premium rewards, cashback, and exclusive lounge access.</p>
+                        <a href="https://wee.bnking.in/c/YmMxOTNkO" class="inline-flex items-center text-purple-600 font-bold text-sm hover:gap-2 transition-all">Explore Cards <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i></a>
                     </div>
-                    <div class="group p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:border-green-500/20 hover:shadow-2xl hover:shadow-green-500/10 hover:-translate-y-2 transition-all duration-300 reveal-on-scroll">
-                        <div class="w-16 h-16 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-green-600 group-hover:text-white transition-colors duration-300"><i data-feather="trending-up" class="w-8 h-8"></i></div>
-                        <h3 class="text-xl font-bold mb-3 text-slate-900">Demat Accounts</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-4">Start your wealth journey with seamless stock and Mutual Fund trading platforms.</p>
-                         <a href="index.html#contact" class="text-green-600 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">Open <i data-feather="arrow-right" class="w-4 h-4"></i></a>
+                    <div class="group p-8 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal-on-scroll">
+                        <div class="w-14 h-14 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"><i data-feather="trending-up"></i></div>
+                        <h3 class="text-xl font-bold mb-2 text-slate-900">Demat Accounts</h3>
+                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">Seamless trading platforms for stocks, mutual funds, and IPOs.</p>
+                        <a href="https://wee.bnking.in/c/YmMxOTNkO" class="inline-flex items-center text-green-600 font-bold text-sm hover:gap-2 transition-all">Start Investing <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i></a>
                     </div>
-                    <div class="group p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:bg-white hover:border-orange-500/20 hover:shadow-2xl hover:shadow-orange-500/10 hover:-translate-y-2 transition-all duration-300 reveal-on-scroll">
-                        <div class="w-16 h-16 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors duration-300"><i data-feather="shopping-bag" class="w-8 h-8"></i></div>
-                        <h3 class="text-xl font-bold mb-3 text-slate-900">Pay Later</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-4">Instant credit for your daily shopping needs with 0% interest options available.</p>
-                         <a href="index.html#contact" class="text-orange-600 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">Get <i data-feather="arrow-right" class="w-4 h-4"></i></a>
+                    <div class="group p-8 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal-on-scroll">
+                        <div class="w-14 h-14 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"><i data-feather="shopping-bag"></i></div>
+                        <h3 class="text-xl font-bold mb-2 text-slate-900">Pay Later</h3>
+                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">Instant digital credit for your shopping needs with zero hassle.</p>
+                        <a href="https://wee.bnking.in/c/YmMxOTNkO" class="inline-flex items-center text-orange-600 font-bold text-sm hover:gap-2 transition-all">Get Credit <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i></a>
                     </div>
                 </div>
             </div>
         </section>
+
         <section id="calculator" class="py-24 bg-slate-50">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-slate-200 flex flex-col lg:flex-row reveal-on-scroll">
-                    <div class="p-8 md:p-14 lg:w-3/5 space-y-10">
-                        <div class="mb-8">
-                             <span class="inline-block py-1 px-3 rounded-md bg-blue-50 text-brand-primary text-xs font-bold tracking-widest uppercase mb-2">Plan your finance</span>
-                            <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900">EMI Calculator</h2>
-                        </div>
-                        <div class="space-y-6">
-                            <div class="group">
-                                <div class="flex justify-between mb-4 items-end">
-                                    <label class="font-medium text-slate-500 text-sm uppercase tracking-wide" for="loan-amount">Loan Amount</label>
-                                    <div class="bg-blue-50 px-4 py-2 rounded-xl text-brand-primary font-bold text-xl">₹<span id="amount-display">100,000</span></div>
-                                </div>
-                                <input type="range" id="loan-amount" min="10000" max="5000000" step="10000" value="100000" class="w-full h-3 bg-slate-200 rounded-full appearance-none cursor-pointer">
-                            </div>
-                            <div class="group">
-                                <div class="flex justify-between mb-4 items-end">
-                                    <label class="font-medium text-slate-500 text-sm uppercase tracking-wide" for="interest-rate">Interest Rate</label>
-                                    <div class="bg-blue-50 px-4 py-2 rounded-xl text-brand-primary font-bold text-xl"><span id="rate-display">10.5</span>%</div>
-                                </div>
-                                <input type="range" id="interest-rate" min="5" max="30" step="0.1" value="10.5" class="w-full h-3 bg-slate-200 rounded-full appearance-none cursor-pointer">
-                            </div>
-                            <div class="group">
-                                <div class="flex justify-between mb-4 items-end">
-                                    <label class="font-medium text-slate-500 text-sm uppercase tracking-wide" for="loan-tenure">Tenure (Years)</label>
-                                    <div class="bg-blue-50 px-4 py-2 rounded-xl text-brand-primary font-bold text-xl"><span id="tenure-display">5</span>Y</div>
-                                </div>
-                                <input type="range" id="loan-tenure" min="1" max="30" step="1" value="5" class="w-full h-3 bg-slate-200 rounded-full appearance-none cursor-pointer">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="lg:w-2/5 bg-slate-900 p-8 md:p-14 text-white flex flex-col justify-center space-y-10">
+                <div class="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row reveal-on-scroll ring-1 ring-slate-100">
+                    <div class="p-8 md:p-12 lg:w-3/5 space-y-8">
                         <div>
-                            <p class="text-slate-400 text-sm uppercase tracking-widest mb-2">Monthly EMI</p>
-                            <h3 class="text-5xl md:text-6xl font-serif font-bold text-brand-accent">₹<span id="emi-output">0</span></h3>
+                            <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900">EMI Calculator</h2>
+                            <p class="text-slate-500 mt-2">Plan your finances with our precision tool.</p>
                         </div>
-                        <div class="space-y-4 pt-10 border-t border-slate-800">
-                            <div class="flex justify-between">
-                                <span class="text-slate-400">Total Interest</span>
-                                <span class="font-bold">₹<span id="interest-output">0</span></span>
+                        <div class="space-y-8">
+                            <div>
+                                <div class="flex justify-between mb-4">
+                                    <label class="font-bold text-slate-700">Loan Amount</label>
+                                    <span class="bg-blue-50 text-brand-primary px-3 py-1 rounded-lg font-bold font-mono">₹<span id="amount-display">100,000</span></span>
+                                </div>
+                                <input type="range" id="loan-amount" min="10000" max="5000000" step="10000" value="100000" class="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-brand-primary">
+                                <div class="flex justify-between text-xs text-slate-400 mt-2"><span>₹10k</span><span>₹50L</span></div>
                             </div>
-                            <div class="flex justify-between">
-                                <span class="text-slate-400">Total Repayment</span>
-                                <span class="font-bold text-xl text-brand-accent">₹<span id="total-output">0</span></span>
+                            <div>
+                                <div class="flex justify-between mb-4">
+                                    <label class="font-bold text-slate-700">Interest Rate</label>
+                                    <span class="bg-blue-50 text-brand-primary px-3 py-1 rounded-lg font-bold font-mono"><span id="rate-display">10.5</span>%</span>
+                                </div>
+                                <input type="range" id="interest-rate" min="5" max="30" step="0.1" value="10.5" class="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-brand-primary">
+                                <div class="flex justify-between text-xs text-slate-400 mt-2"><span>5%</span><span>30%</span></div>
                             </div>
-                        </div>
-                        <a href="https://wee.bnking.in/c/YmMxOTNkO" target="_blank" class="apply-link w-full py-4 bg-white text-slate-900 rounded-2xl font-bold text-center hover:bg-brand-accent hover:text-white transition-all shadow-xl shadow-black/20">Apply for Loan</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="contact" class="py-24 bg-white">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="grid lg:grid-cols-2 gap-16">
-                    <div class="reveal-on-scroll">
-                        <h2 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6">Connect with our experts</h2>
-                        <p class="text-slate-500 text-lg mb-10 leading-relaxed">Have specific financial goals? Let our advisors guide you through the best products available in the market. We're here to help you grow.</p>
-                        <div class="space-y-6">
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 bg-blue-50 text-brand-primary rounded-xl flex items-center justify-center"><i data-feather="mail" class="w-6 h-6"></i></div>
-                                <div><p class="text-sm text-slate-400 uppercase font-bold tracking-wider">Email Us</p><a href="mailto:careers@themallu.online" class="text-lg font-bold hover:text-brand-primary">careers@themallu.online</a></div>
-                            </div>
-                            <div class="flex items-center gap-4">
-                                <div class="w-12 h-12 bg-green-50 text-green-600 rounded-xl flex items-center justify-center"><i data-feather="message-circle" class="w-6 h-6"></i></div>
-                                <div><p class="text-sm text-slate-400 uppercase font-bold tracking-wider">WhatsApp</p><a href="https://wa.me/918113824419" target="_blank" class="text-lg font-bold hover:text-green-600">+91 81138 24419</a></div>
+                            <div>
+                                <div class="flex justify-between mb-4">
+                                    <label class="font-bold text-slate-700">Tenure</label>
+                                    <span class="bg-blue-50 text-brand-primary px-3 py-1 rounded-lg font-bold font-mono"><span id="tenure-display">5</span> Years</span>
+                                </div>
+                                <input type="range" id="loan-tenure" min="1" max="30" step="1" value="5" class="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-brand-primary">
+                                <div class="flex justify-between text-xs text-slate-400 mt-2"><span>1Y</span><span>30Y</span></div>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-slate-50 p-8 md:p-10 rounded-3xl border border-slate-200 reveal-on-scroll">
-                         <form class="space-y-6">
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div class="space-y-2">
-                                    <label class="text-sm font-bold text-slate-600 uppercase tracking-wide">Your Name</label>
-                                    <input type="text" class="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 focus:border-brand-primary outline-none transition-all">
+                    <div class="lg:w-2/5 bg-brand-dark p-8 md:p-12 text-white flex flex-col justify-center relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-primary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+                        <div class="relative z-10">
+                            <p class="text-slate-400 uppercase tracking-widest text-sm font-semibold mb-2">Monthly EMI</p>
+                            <h3 class="text-5xl md:text-6xl font-serif font-bold text-brand-accent mb-8">₹<span id="emi-output">0</span></h3>
+                            
+                            <div class="space-y-4 pt-8 border-t border-slate-700">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-slate-400">Total Interest</span>
+                                    <span class="font-bold font-mono text-lg">₹<span id="interest-output">0</span></span>
                                 </div>
-                                <div class="space-y-2">
-                                    <label class="text-sm font-bold text-slate-600 uppercase tracking-wide">Phone Number</label>
-                                    <input type="tel" class="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 focus:border-brand-primary outline-none transition-all">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-slate-400">Total Payment</span>
+                                    <span class="font-bold font-mono text-lg text-white">₹<span id="total-output">0</span></span>
                                 </div>
                             </div>
-                            <div class="space-y-2">
-                                <label class="text-sm font-bold text-slate-600 uppercase tracking-wide">Service Interested In</label>
-                                <select class="w-full px-4 py-3 rounded-xl bg-white border border-slate-200 focus:border-brand-primary outline-none transition-all">
-                                    <option>Personal Loan</option>
-                                    <option>Credit Cards</option>
-                                    <option>Demat Account</option>
-                                    <option>Business Loan</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="w-full py-4 bg-brand-primary text-white rounded-xl font-bold hover:bg-brand-dark transition-all shadow-lg">Send Message</button>
-                         </form>
+                            
+                            <a href="https://wee.bnking.in/c/YmMxOTNkO" class="mt-10 block w-full py-4 bg-brand-primary hover:bg-brand-secondary text-center text-white rounded-xl font-bold transition-colors shadow-lg shadow-blue-600/30">
+                                Apply for this Loan
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    <footer class="bg-slate-900 text-white py-16 px-6 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-                <div class="col-span-1 md:col-span-2">
-                    <div class="flex items-center gap-2 mb-6">
-                         <div class="w-10 h-10 bg-brand-primary rounded-xl flex items-center justify-center text-2xl font-serif font-bold">M</div>
-                         <span class="text-2xl font-serif font-bold">Mallu<span class="text-brand-primary">Finance</span></span>
-                    </div>
-                    <p class="text-slate-400 max-w-sm mb-8 leading-relaxed">Empowering individuals with transparent, fast, and secure financial solutions across India. Join thousands who trust us for their wealth journey.</p>
-                </div>
-                <div>
-                    <h4 class="text-lg font-bold mb-6">Quick Links</h4>
-                    <ul class="space-y-4 text-slate-400">
-                        <li><a href="index.html#home" class="hover:text-white transition-colors">Home</a></li>
-                        <li><a href="index.html#services" class="hover:text-white transition-colors">Services</a></li>
-                        <li><a href="whatsnew.html" class="hover:text-white transition-colors">What's New</a></li>
-                        <li><a href="careers.html" class="hover:text-white transition-colors">Careers</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-bold mb-6">Legal</h4>
-                    <ul class="space-y-4 text-slate-400">
-                        <li><a href="privacypolicy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
-                        <li><a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
-                    </ul>
-                </div>
+
+    <footer class="bg-brand-dark text-slate-300 py-16 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-12 border-b border-slate-800 pb-12">
+            <div class="col-span-1 md:col-span-1">
+                <a href="index.html" class="flex items-center gap-2 mb-6">
+                    <div class="w-8 h-8 bg-brand-primary text-white rounded-lg flex items-center justify-center font-serif font-bold">M</div>
+                    <span class="text-xl font-serif font-bold text-white">Mallu<span class="text-brand-primary">Finance</span></span>
+                </a>
+                <p class="text-sm text-slate-400 leading-relaxed">Empowering your financial journey with trusted banking partnerships and cutting-edge digital solutions.</p>
             </div>
-            <div class="pt-8 border-t border-slate-800 text-center text-slate-500 text-sm">
-                <p>&copy; 2025 Mallu Finance. All rights reserved. Registered Financial Referral Partner.</p>
+            <div>
+                <h4 class="text-white font-bold mb-6">Quick Links</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#home" class="hover:text-brand-primary transition-colors">Home</a></li>
+                    <li><a href="#services" class="hover:text-brand-primary transition-colors">Services</a></li>
+                    <li><a href="#calculator" class="hover:text-brand-primary transition-colors">EMI Calculator</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Company</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="careers.html" class="hover:text-brand-primary transition-colors">Careers</a></li>
+                    <li><a href="whatsnew.html" class="hover:text-brand-primary transition-colors">What's New</a></li>
+                    <li><a href="mailto:contact@mallufinance.com" class="hover:text-brand-primary transition-colors">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6">Legal</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="privacypolicy.html" class="hover:text-brand-primary transition-colors">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="hover:text-brand-primary transition-colors">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+            <p>&copy; 2025 Mallu Finance. All rights reserved.</p>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-white transition-colors"><i data-feather="twitter" class="w-4 h-4"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i data-feather="instagram" class="w-4 h-4"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i data-feather="linkedin" class="w-4 h-4"></i></a>
             </div>
         </div>
     </footer>
