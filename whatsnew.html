@@ -3,30 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Check out the latest product updates, features, and news from Mallu Finance.">
+    <meta name="robots" content="index, follow">
     <title>What's New | Mallu Finance</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="styles.css">
     <script>
-        tailwind.config = { theme: { extend: { fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], serif: ['Playfair Display', 'serif'] }, colors: { brand: { dark: '#0f172a', primary: '#2563EB', secondary: '#4F46E5', accent: '#38bdf8', surface: '#f8fafc' } } } } }
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
+                    colors: { brand: { dark: '#0B1120', primary: '#2563EB', secondary: '#4F46E5', accent: '#0EA5E9' } },
+                    animation: { 'blob': 'blob 7s infinite' },
+                    keyframes: { blob: { '0%': { transform: 'translate(0px, 0px) scale(1)' }, '33%': { transform: 'translate(30px, -50px) scale(1.1)' }, '66%': { transform: 'translate(-20px, 20px) scale(0.9)' }, '100%': { transform: 'translate(0px, 0px) scale(1)' } } }
+                }
+            }
+        }
     </script>
 </head>
-<body class="bg-brand-surface text-slate-800 antialiased">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-primary selection:text-white">
     <div id="initial-loader" class="fixed inset-0 z-[200] bg-white flex flex-col items-center justify-center transition-opacity duration-700">
         <div class="text-center flex flex-col items-center">
-             <div class="w-20 h-20 bg-brand-primary text-white rounded-2xl flex items-center justify-center mb-6 shadow-xl shadow-blue-500/20">
-                <span class="font-serif font-bold text-4xl">M</span>
+             <div class="w-24 h-24 bg-brand-primary text-white rounded-3xl flex items-center justify-center mb-6 shadow-2xl shadow-blue-500/20">
+                <span class="font-serif font-bold text-5xl">M</span>
             </div>
-            <div class="w-32 h-1 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-brand-primary animate-loading"></div></div>
+            <h1 class="text-2xl font-serif font-bold text-slate-900 tracking-tight mb-4">Mallu<span class="text-brand-primary">Finance</span></h1>
+            <div class="w-48 h-1 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-brand-primary animate-loading"></div></div>
         </div>
     </div>
-    <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm h-16 flex items-center">
-        <nav class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-brand-primary text-white rounded-lg flex items-center justify-center font-serif font-bold">M</div>
-                <span class="text-xl font-serif font-bold text-slate-900">Mallu<span class="text-brand-primary">Finance</span></span>
+    
+    <div id="mobile-menu" class="fixed inset-0 z-[100] bg-white transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center gap-8">
+        <button id="close-menu" class="absolute top-6 right-6 text-slate-900 p-2 hover:bg-slate-100 rounded-full mobile-link"><i data-feather="x"></i></button>
+        <a href="index.html" class="text-2xl font-serif font-bold mb-4">Mallu<span class="text-brand-primary">Finance</span></a>
+        <a href="index.html" class="text-xl font-medium mobile-link">Home</a>
+        <a href="about.html" class="text-xl font-medium mobile-link">About Us</a>
+        <a href="whatsnew.html" class="text-xl font-medium mobile-link">What's New</a>
+        <a href="careers.html" class="text-xl font-medium mobile-link">Careers</a>
+        <a href="index.html#contact" class="text-xl font-medium mobile-link">Contact</a>
+    </div>
+
+    <header id="main-header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent py-4">
+        <nav class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 group relative z-50">
+                <div class="w-10 h-10 bg-brand-primary text-white rounded-xl flex items-center justify-center shadow-lg">M</div>
+                <span class="text-2xl font-serif font-bold text-slate-900">Mallu<span class="text-brand-primary">Finance</span></span>
             </a>
-            <a href="index.html" class="text-sm font-bold text-slate-600 hover:text-brand-primary transition-colors flex items-center gap-1"><i data-feather="arrow-left" class="w-4 h-4"></i> Back Home</a>
+            <ul class="hidden md:flex items-center gap-8 font-medium text-slate-600 text-sm tracking-wide">
+                <li><a href="index.html" class="hover:text-brand-primary transition-colors">Home</a></li>
+                <li><a href="about.html" class="hover:text-brand-primary transition-colors">About Us</a></li>
+                <li><a href="whatsnew.html" class="text-brand-primary font-bold">What's New</a></li>
+                <li><a href="careers.html" class="hover:text-brand-primary transition-colors">Careers</a></li>
+                <li><a href="https://wee.bnking.in/c/YmMxOTNkO" target="_blank" class="bg-slate-900 hover:bg-brand-primary text-white px-6 py-2.5 rounded-full transition-all">Apply Now</a></li>
+            </ul>
+            <button id="mobile-toggle" class="md:hidden text-slate-900 p-2"><i data-feather="menu"></i></button>
         </nav>
     </header>
     <main class="pt-40 pb-24 px-6">
@@ -51,8 +84,25 @@
             </div>
         </div>
     </main>
-    <footer class="bg-brand-dark text-slate-400 py-8 text-center text-sm">
-        <p>&copy; 2025 Mallu Finance. All rights reserved.</p>
+    <footer class="bg-slate-900 text-white py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
+                <div class="text-center md:text-left">
+                    <span class="text-2xl font-serif font-bold">Mallu<span class="text-brand-primary">Finance</span></span>
+                    <p class="text-slate-500 mt-2">Gateway to Financial Freedom.</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-8 font-medium text-slate-400">
+                    <a href="index.html" class="hover:text-brand-primary transition-colors">Home</a>
+                    <a href="about.html" class="hover:text-brand-primary transition-colors">About Us</a>
+                    <a href="privacypolicy.html" class="hover:text-brand-primary transition-colors">Privacy Policy</a>
+                    <a href="terms.html" class="hover:text-brand-primary transition-colors">Terms</a>
+                    <a href="index.html#contact" class="hover:text-brand-primary transition-colors">Contact</a>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center">
+                <p class="text-slate-500">&copy; 2025 Mallu Finance. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
     <script src="script.js"></script>
 </body>

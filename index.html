@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mallu Finance - Professional financial solutions in India.">
+    <meta name="description" content="Mallu Finance - India's trusted gateway to financial freedom. Compare loans, credit cards, and investments from top banks.">
+    <meta name="robots" content="index, follow">
     <title>Mallu Finance | Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,227 +17,149 @@
             theme: {
                 extend: {
                     fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
-                    colors: { 
-                        brand: { 
-                            dark: '#0f172a', 
-                            primary: '#2563EB', 
-                            secondary: '#4F46E5', 
-                            accent: '#38bdf8', 
-                            surface: '#f8fafc' 
-                        } 
-                    },
-                    animation: { 'float': 'float 6s ease-in-out infinite' },
-                    keyframes: { float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-20px)' } } }
+                    colors: { brand: { dark: '#0B1120', primary: '#2563EB', secondary: '#4F46E5', accent: '#0EA5E9' } },
+                    animation: { 'blob': 'blob 7s infinite' },
+                    keyframes: { blob: { '0%': { transform: 'translate(0px, 0px) scale(1)' }, '33%': { transform: 'translate(30px, -50px) scale(1.1)' }, '66%': { transform: 'translate(-20px, 20px) scale(0.9)' }, '100%': { transform: 'translate(0px, 0px) scale(1)' } } }
                 }
             }
         }
     </script>
 </head>
-<body class="bg-brand-surface text-slate-800 antialiased selection:bg-brand-primary selection:text-white">
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-primary selection:text-white">
     <div id="initial-loader" class="fixed inset-0 z-[200] bg-white flex flex-col items-center justify-center transition-opacity duration-700">
         <div class="text-center flex flex-col items-center">
-             <div class="w-20 h-20 bg-brand-primary text-white rounded-2xl flex items-center justify-center mb-6 shadow-xl shadow-blue-500/20">
-                <span class="font-serif font-bold text-4xl">M</span>
+             <div class="w-24 h-24 bg-brand-primary text-white rounded-3xl flex items-center justify-center mb-6 shadow-2xl shadow-blue-500/20">
+                <span class="font-serif font-bold text-5xl">M</span>
             </div>
-            <div class="w-32 h-1 bg-slate-100 rounded-full overflow-hidden">
-                <div class="h-full bg-brand-primary animate-loading"></div>
-            </div>
+            <h1 class="text-2xl font-serif font-bold text-slate-900 tracking-tight mb-4">Mallu<span class="text-brand-primary">Finance</span></h1>
+            <div class="w-48 h-1 bg-slate-100 rounded-full overflow-hidden"><div class="h-full bg-brand-primary animate-loading"></div></div>
         </div>
+    </div>
+    
+    <div id="mobile-menu" class="fixed inset-0 z-[100] bg-white transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center gap-8">
+        <button id="close-menu" class="absolute top-6 right-6 text-slate-900 p-2 hover:bg-slate-100 rounded-full mobile-link"><i data-feather="x"></i></button>
+        <a href="index.html" class="text-2xl font-serif font-bold mb-4">Mallu<span class="text-brand-primary">Finance</span></a>
+        <a href="index.html" class="text-xl font-medium mobile-link">Home</a>
+        <a href="about.html" class="text-xl font-medium mobile-link">About Us</a>
+        <a href="whatsnew.html" class="text-xl font-medium mobile-link">What's New</a>
+        <a href="careers.html" class="text-xl font-medium mobile-link">Careers</a>
+        <a href="#contact" class="text-xl font-medium mobile-link">Contact</a>
     </div>
 
     <header id="main-header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent py-4">
         <nav class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-2 relative z-50">
-                <div class="w-10 h-10 bg-brand-primary text-white rounded-lg flex items-center justify-center shadow-lg font-serif font-bold text-xl">M</div>
-                <span class="text-2xl font-serif font-bold text-slate-900 tracking-tight">Mallu<span class="text-brand-primary">Finance</span></span>
+            <a href="index.html" class="flex items-center gap-2 group relative z-50">
+                <div class="w-10 h-10 bg-brand-primary text-white rounded-xl flex items-center justify-center shadow-lg">M</div>
+                <span class="text-2xl font-serif font-bold text-slate-900">Mallu<span class="text-brand-primary">Finance</span></span>
             </a>
-            
-            <!-- Desktop Menu -->
             <ul class="hidden md:flex items-center gap-8 font-medium text-slate-600 text-sm tracking-wide">
-                <li><a href="#home" class="hover:text-brand-primary transition-colors">Home</a></li>
-                <li><a href="#services" class="hover:text-brand-primary transition-colors">Services</a></li>
+                <li><a href="index.html" class="text-brand-primary font-bold">Home</a></li>
+                <li><a href="about.html" class="hover:text-brand-primary transition-colors">About Us</a></li>
                 <li><a href="whatsnew.html" class="hover:text-brand-primary transition-colors">What's New</a></li>
                 <li><a href="careers.html" class="hover:text-brand-primary transition-colors">Careers</a></li>
-                <li><a href="https://wee.bnking.in/c/YmMxOTNkO" target="_blank" class="bg-brand-dark hover:bg-brand-primary text-white px-6 py-2.5 rounded-full transition-all shadow-lg shadow-brand-primary/20 hover:shadow-brand-primary/40">Apply Now</a></li>
+                <li><a href="https://wee.bnking.in/c/YmMxOTNkO" target="_blank" class="bg-slate-900 hover:bg-brand-primary text-white px-6 py-2.5 rounded-full transition-all">Apply Now</a></li>
             </ul>
-
-            <!-- Mobile Toggle -->
-            <button id="mobile-toggle" class="md:hidden text-slate-900 p-2 relative z-50 hover:bg-slate-100 rounded-lg transition-colors">
-                <i data-feather="menu"></i>
-            </button>
+            <button id="mobile-toggle" class="md:hidden text-slate-900 p-2"><i data-feather="menu"></i></button>
         </nav>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 flex flex-col justify-center items-center gap-8 md:hidden">
-            <a href="#home" class="mobile-link text-2xl font-serif font-bold text-slate-800">Home</a>
-            <a href="#services" class="mobile-link text-2xl font-serif font-bold text-slate-800">Services</a>
-            <a href="whatsnew.html" class="mobile-link text-2xl font-serif font-bold text-slate-800">What's New</a>
-            <a href="careers.html" class="mobile-link text-2xl font-serif font-bold text-slate-800">Careers</a>
-            <a href="https://wee.bnking.in/c/YmMxOTNkO" target="_blank" class="bg-brand-primary text-white px-8 py-3 rounded-full text-xl font-bold shadow-xl">Apply Now</a>
-        </div>
     </header>
-
+    
     <main>
-        <section id="home" class="relative pt-40 pb-20 lg:pt-52 lg:pb-32 px-6 overflow-hidden bg-white">
-            <!-- Abstract Background -->
-            <div class="absolute top-0 right-0 -z-10 w-[800px] h-[800px] bg-gradient-to-br from-blue-50 to-indigo-50 rounded-full blur-3xl opacity-70 translate-x-1/3 -translate-y-1/4"></div>
-            <div class="absolute bottom-0 left-0 -z-10 w-[600px] h-[600px] bg-gradient-to-tr from-sky-50 to-blue-50 rounded-full blur-3xl opacity-70 -translate-x-1/4 translate-y-1/4"></div>
-            
-            <div class="max-w-6xl mx-auto text-center reveal-on-scroll">
-                <div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full text-brand-primary text-sm font-semibold mb-8 animate-float">
-                    <span class="w-2 h-2 bg-brand-primary rounded-full"></span>
-                    Trust. Growth. Security.
-                </div>
-                <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-slate-900 leading-[1.1] mb-8 tracking-tight">
-                    Your Gateway to <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-accent">Financial Freedom</span>
-                </h1>
-                <p class="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-                    Connect with India's leading banks for loans and investments through our simplified, secure digital platform.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="https://wee.bnking.in/c/YmMxOTNkO" class="w-full sm:w-auto px-8 py-4 bg-brand-primary text-white rounded-full font-bold shadow-xl shadow-blue-500/20 hover:shadow-blue-500/40 hover:-translate-y-1 transition-all duration-300">Get Started</a>
-                    <a href="#calculator" class="w-full sm:w-auto px-8 py-4 bg-white text-slate-700 border border-slate-200 rounded-full font-bold hover:bg-slate-50 hover:border-slate-300 transition-all">Calculate EMI</a>
+        <section id="home" class="relative pt-48 pb-32 px-6 overflow-hidden">
+            <div class="absolute top-0 right-0 -z-10 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-3xl animate-blob"></div>
+            <div class="max-w-5xl mx-auto text-center reveal-on-scroll">
+                <h1 class="text-5xl md:text-8xl font-serif font-bold text-slate-900 leading-[1.1] mb-8 tracking-tight">Gateway to <br><span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-primary to-brand-accent">Financial Freedom</span></h1>
+                <p class="text-xl text-slate-600 mb-12 max-w-2xl mx-auto">Connect with India's leading banks for loans and investments through our trusted platform.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://wee.bnking.in/c/YmMxOTNkO" class="px-8 py-4 bg-brand-primary text-white rounded-full font-bold shadow-xl hover:bg-blue-700 transition-colors">Get Started</a>
+                    <a href="about.html" class="px-8 py-4 bg-white/80 border border-slate-200 rounded-full font-bold hover:bg-slate-50 transition-colors">Learn More</a>
                 </div>
             </div>
         </section>
-
+        
         <section id="services" class="py-24 bg-white">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-16 reveal-on-scroll">
-                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">Our Financial Products</h2>
-                    <p class="text-slate-500">Tailored solutions designed for your growth.</p>
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-6">
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-brand-primary/20 transition-all reveal-on-scroll group">
+                    <div class="w-12 h-12 bg-blue-100 text-brand-primary rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"><i data-feather="home"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Personal Loans</h3>
+                    <p class="text-slate-500 text-sm mb-4">Competitive rates from top banks.</p>
+                    <a href="https://wee.bnking.in/c/YmMxOTNkO" class="text-brand-primary font-bold text-sm hover:translate-x-1 inline-block transition-transform">Apply Now →</a>
                 </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="group p-8 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal-on-scroll">
-                        <div class="w-14 h-14 bg-blue-50 text-brand-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"><i data-feather="home"></i></div>
-                        <h3 class="text-xl font-bold mb-2 text-slate-900">Personal Loans</h3>
-                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">Quick approvals with competitive interest rates from top-tier banks.</p>
-                        <a href="https://wee.bnking.in/c/YmMxOTNkO" class="inline-flex items-center text-brand-primary font-bold text-sm hover:gap-2 transition-all">Apply Now <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i></a>
-                    </div>
-                    <div class="group p-8 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal-on-scroll">
-                        <div class="w-14 h-14 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"><i data-feather="credit-card"></i></div>
-                        <h3 class="text-xl font-bold mb-2 text-slate-900">Credit Cards</h3>
-                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">Unlock premium rewards, cashback, and exclusive lounge access.</p>
-                        <a href="https://wee.bnking.in/c/YmMxOTNkO" class="inline-flex items-center text-purple-600 font-bold text-sm hover:gap-2 transition-all">Explore Cards <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i></a>
-                    </div>
-                    <div class="group p-8 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal-on-scroll">
-                        <div class="w-14 h-14 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"><i data-feather="trending-up"></i></div>
-                        <h3 class="text-xl font-bold mb-2 text-slate-900">Demat Accounts</h3>
-                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">Seamless trading platforms for stocks, mutual funds, and IPOs.</p>
-                        <a href="https://wee.bnking.in/c/YmMxOTNkO" class="inline-flex items-center text-green-600 font-bold text-sm hover:gap-2 transition-all">Start Investing <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i></a>
-                    </div>
-                    <div class="group p-8 rounded-[2rem] bg-white border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 reveal-on-scroll">
-                        <div class="w-14 h-14 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"><i data-feather="shopping-bag"></i></div>
-                        <h3 class="text-xl font-bold mb-2 text-slate-900">Pay Later</h3>
-                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">Instant digital credit for your shopping needs with zero hassle.</p>
-                        <a href="https://wee.bnking.in/c/YmMxOTNkO" class="inline-flex items-center text-orange-600 font-bold text-sm hover:gap-2 transition-all">Get Credit <i data-feather="arrow-right" class="w-4 h-4 ml-1"></i></a>
-                    </div>
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-purple-500/20 transition-all reveal-on-scroll group">
+                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"><i data-feather="credit-card"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Credit Cards</h3>
+                    <p class="text-slate-500 text-sm mb-4">Premium rewards & lounge access.</p>
+                    <a href="https://wee.bnking.in/c/YmMxOTNkO" class="text-purple-600 font-bold text-sm hover:translate-x-1 inline-block transition-transform">Explore →</a>
+                </div>
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-green-500/20 transition-all reveal-on-scroll group">
+                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"><i data-feather="trending-up"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Demat Accounts</h3>
+                    <p class="text-slate-500 text-sm mb-4">Invest in stocks & mutual funds.</p>
+                    <a href="https://wee.bnking.in/c/YmMxOTNkO" class="text-green-600 font-bold text-sm hover:translate-x-1 inline-block transition-transform">Open Now →</a>
+                </div>
+                <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-orange-500/20 transition-all reveal-on-scroll group">
+                    <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform"><i data-feather="shopping-bag"></i></div>
+                    <h3 class="text-xl font-bold mb-2">Pay Later</h3>
+                    <p class="text-slate-500 text-sm mb-4">Instant credit for shopping.</p>
+                    <a href="https://wee.bnking.in/c/YmMxOTNkO" class="text-orange-600 font-bold text-sm hover:translate-x-1 inline-block transition-transform">Apply →</a>
                 </div>
             </div>
         </section>
 
         <section id="calculator" class="py-24 bg-slate-50">
             <div class="max-w-7xl mx-auto px-6">
-                <div class="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row reveal-on-scroll ring-1 ring-slate-100">
-                    <div class="p-8 md:p-12 lg:w-3/5 space-y-8">
-                        <div>
-                            <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900">EMI Calculator</h2>
-                            <p class="text-slate-500 mt-2">Plan your finances with our precision tool.</p>
-                        </div>
-                        <div class="space-y-8">
+                <div class="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row reveal-on-scroll">
+                    <div class="p-12 lg:w-3/5 space-y-8">
+                        <h2 class="text-4xl font-serif font-bold">EMI Calculator</h2>
+                        <div class="space-y-6">
                             <div>
-                                <div class="flex justify-between mb-4">
-                                    <label class="font-bold text-slate-700">Loan Amount</label>
-                                    <span class="bg-blue-50 text-brand-primary px-3 py-1 rounded-lg font-bold font-mono">₹<span id="amount-display">100,000</span></span>
-                                </div>
-                                <input type="range" id="loan-amount" min="10000" max="5000000" step="10000" value="100000" class="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-brand-primary">
-                                <div class="flex justify-between text-xs text-slate-400 mt-2"><span>₹10k</span><span>₹50L</span></div>
+                                <div class="flex justify-between mb-4"><label class="font-bold text-slate-500">Loan Amount</label><span class="text-brand-primary font-bold">₹<span id="amount-display">100000</span></span></div>
+                                <input type="range" id="loan-amount" min="10000" max="5000000" step="10000" value="100000" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer">
                             </div>
                             <div>
-                                <div class="flex justify-between mb-4">
-                                    <label class="font-bold text-slate-700">Interest Rate</label>
-                                    <span class="bg-blue-50 text-brand-primary px-3 py-1 rounded-lg font-bold font-mono"><span id="rate-display">10.5</span>%</span>
-                                </div>
-                                <input type="range" id="interest-rate" min="5" max="30" step="0.1" value="10.5" class="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-brand-primary">
-                                <div class="flex justify-between text-xs text-slate-400 mt-2"><span>5%</span><span>30%</span></div>
+                                <div class="flex justify-between mb-4"><label class="font-bold text-slate-500">Interest Rate (%)</label><span class="text-brand-primary font-bold"><span id="rate-display">10.5</span>%</span></div>
+                                <input type="range" id="interest-rate" min="5" max="30" step="0.1" value="10.5" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer">
                             </div>
                             <div>
-                                <div class="flex justify-between mb-4">
-                                    <label class="font-bold text-slate-700">Tenure</label>
-                                    <span class="bg-blue-50 text-brand-primary px-3 py-1 rounded-lg font-bold font-mono"><span id="tenure-display">5</span> Years</span>
-                                </div>
-                                <input type="range" id="loan-tenure" min="1" max="30" step="1" value="5" class="w-full h-2 bg-slate-100 rounded-lg appearance-none cursor-pointer accent-brand-primary">
-                                <div class="flex justify-between text-xs text-slate-400 mt-2"><span>1Y</span><span>30Y</span></div>
+                                <div class="flex justify-between mb-4"><label class="font-bold text-slate-500">Tenure (Years)</label><span class="text-brand-primary font-bold"><span id="tenure-display">5</span>Y</span></div>
+                                <input type="range" id="loan-tenure" min="1" max="30" step="1" value="5" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer">
                             </div>
                         </div>
                     </div>
-                    <div class="lg:w-2/5 bg-brand-dark p-8 md:p-12 text-white flex flex-col justify-center relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-primary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-                        <div class="relative z-10">
-                            <p class="text-slate-400 uppercase tracking-widest text-sm font-semibold mb-2">Monthly EMI</p>
-                            <h3 class="text-5xl md:text-6xl font-serif font-bold text-brand-accent mb-8">₹<span id="emi-output">0</span></h3>
-                            
-                            <div class="space-y-4 pt-8 border-t border-slate-700">
-                                <div class="flex justify-between items-center">
-                                    <span class="text-slate-400">Total Interest</span>
-                                    <span class="font-bold font-mono text-lg">₹<span id="interest-output">0</span></span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-slate-400">Total Payment</span>
-                                    <span class="font-bold font-mono text-lg text-white">₹<span id="total-output">0</span></span>
-                                </div>
-                            </div>
-                            
-                            <a href="https://wee.bnking.in/c/YmMxOTNkO" class="mt-10 block w-full py-4 bg-brand-primary hover:bg-brand-secondary text-center text-white rounded-xl font-bold transition-colors shadow-lg shadow-blue-600/30">
-                                Apply for this Loan
-                            </a>
+                    <div class="lg:w-2/5 bg-slate-900 p-12 text-white flex flex-col justify-center space-y-8">
+                        <div><p class="text-slate-400 uppercase tracking-widest mb-2">Monthly EMI</p><h3 class="text-5xl font-serif font-bold text-brand-accent">₹<span id="emi-output">0</span></h3></div>
+                        <div class="space-y-4 pt-8 border-t border-slate-800">
+                            <div class="flex justify-between"><span>Total Interest</span><span class="font-bold">₹<span id="interest-output">0</span></span></div>
+                            <div class="flex justify-between"><span>Total Payment</span><span class="font-bold">₹<span id="total-output">0</span></span></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <section id="contact" class="py-24 bg-white">
+             <div class="max-w-3xl mx-auto text-center px-6 reveal-on-scroll">
+                 <h2 class="text-4xl font-serif font-bold mb-6">Ready to start?</h2>
+                 <p class="text-slate-600 mb-8">Your financial journey begins with a single step. Contact us today or apply online.</p>
+                 <a href="mailto:support@themallu.online" class="text-2xl font-bold text-brand-primary hover:text-slate-900 transition-colors">support@themallu.online</a>
+             </div>
+        </section>
     </main>
-
-    <footer class="bg-brand-dark text-slate-300 py-16 px-6">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-12 border-b border-slate-800 pb-12">
-            <div class="col-span-1 md:col-span-1">
-                <a href="index.html" class="flex items-center gap-2 mb-6">
-                    <div class="w-8 h-8 bg-brand-primary text-white rounded-lg flex items-center justify-center font-serif font-bold">M</div>
-                    <span class="text-xl font-serif font-bold text-white">Mallu<span class="text-brand-primary">Finance</span></span>
-                </a>
-                <p class="text-sm text-slate-400 leading-relaxed">Empowering your financial journey with trusted banking partnerships and cutting-edge digital solutions.</p>
+    <footer class="bg-slate-900 text-white py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
+                <div class="text-center md:text-left">
+                    <span class="text-2xl font-serif font-bold">Mallu<span class="text-brand-primary">Finance</span></span>
+                    <p class="text-slate-500 mt-2">Gateway to Financial Freedom.</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-8 font-medium text-slate-400">
+                    <a href="index.html" class="hover:text-brand-primary transition-colors">Home</a>
+                    <a href="about.html" class="hover:text-brand-primary transition-colors">About Us</a>
+                    <a href="privacypolicy.html" class="hover:text-brand-primary transition-colors">Privacy Policy</a>
+                    <a href="terms.html" class="hover:text-brand-primary transition-colors">Terms</a>
+                    <a href="#contact" class="hover:text-brand-primary transition-colors">Contact</a>
+                </div>
             </div>
-            <div>
-                <h4 class="text-white font-bold mb-6">Quick Links</h4>
-                <ul class="space-y-3 text-sm">
-                    <li><a href="#home" class="hover:text-brand-primary transition-colors">Home</a></li>
-                    <li><a href="#services" class="hover:text-brand-primary transition-colors">Services</a></li>
-                    <li><a href="#calculator" class="hover:text-brand-primary transition-colors">EMI Calculator</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-6">Company</h4>
-                <ul class="space-y-3 text-sm">
-                    <li><a href="careers.html" class="hover:text-brand-primary transition-colors">Careers</a></li>
-                    <li><a href="whatsnew.html" class="hover:text-brand-primary transition-colors">What's New</a></li>
-                    <li><a href="mailto:contact@mallufinance.com" class="hover:text-brand-primary transition-colors">Contact Us</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-6">Legal</h4>
-                <ul class="space-y-3 text-sm">
-                    <li><a href="privacypolicy.html" class="hover:text-brand-primary transition-colors">Privacy Policy</a></li>
-                    <li><a href="terms.html" class="hover:text-brand-primary transition-colors">Terms of Service</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-            <p>&copy; 2025 Mallu Finance. All rights reserved.</p>
-            <div class="flex gap-4">
-                <a href="#" class="hover:text-white transition-colors"><i data-feather="twitter" class="w-4 h-4"></i></a>
-                <a href="#" class="hover:text-white transition-colors"><i data-feather="instagram" class="w-4 h-4"></i></a>
-                <a href="#" class="hover:text-white transition-colors"><i data-feather="linkedin" class="w-4 h-4"></i></a>
+            <div class="border-t border-slate-800 pt-8 text-center">
+                <p class="text-slate-500">&copy; 2025 Mallu Finance. All rights reserved.</p>
             </div>
         </div>
     </footer>
