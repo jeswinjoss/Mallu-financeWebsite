@@ -1,0 +1,40 @@
+/* 
+  Tailwind CSS is used for main styling.
+  Custom animations and overrides below.
+*/
+
+html, body {
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling on maintenance page */
+}
+
+/* Animation for slow background pulse */
+@keyframes pulse-slow {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.05); }
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Slow spin for the settings icon */
+@keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 8s linear infinite;
+}
+
+/* Gentle bounce for the icon container */
+@keyframes bounce-slow {
+    0%, 100% { transform: translateY(-5%); }
+    50% { transform: translateY(5%); }
+}
+
+.animate-bounce-slow {
+    animation: bounce-slow 3s ease-in-out infinite;
+}
+

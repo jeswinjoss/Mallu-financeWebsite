@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mallu Finance | Under Maintenance</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            primary: '#2563eb',
+                            accent: '#7c3aed',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased overflow-hidden h-screen flex flex-col relative">
+    
+    <!-- Background Elements -->
+    <div class="absolute top-0 right-0 -z-10 w-[600px] h-[600px] bg-blue-100/50 rounded-full blur-3xl opacity-60 pointer-events-none animate-pulse-slow"></div>
+    <div class="absolute bottom-0 left-0 -z-10 w-[400px] h-[400px] bg-purple-100/50 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center justify-center px-6">
+        <div class="max-w-2xl w-full text-center">
+            <!-- Brand Logo -->
+            <div class="inline-flex items-center gap-2 mb-10">
+                <div class="w-12 h-12 bg-brand-primary text-white rounded-xl flex items-center justify-center shadow-lg">
+                    <span class="font-serif font-bold text-3xl">M</span>
+                </div>
+                <span class="text-3xl font-serif font-bold text-slate-900 tracking-tight">
+                    Mallu<span class="text-brand-primary">Finance</span>
+                </span>
+            </div>
+
+            <!-- Illustration Icon -->
+            <div class="mb-8 flex justify-center">
+                <div class="w-24 h-24 bg-white rounded-full shadow-xl flex items-center justify-center text-brand-primary animate-bounce-slow">
+                    <i data-feather="settings" class="w-10 h-10 animate-spin-slow"></i>
+                </div>
+            </div>
+
+            <!-- Text Content -->
+            <h1 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6">
+                We are currently <br/>
+                <span class="text-brand-primary">Under Maintenance</span>
+            </h1>
+            <p class="text-lg text-slate-600 mb-10 leading-relaxed max-w-lg mx-auto">
+                We're upgrading our financial systems to serve you better. We'll be back online shortly with improved features and smoother experiences.
+            </p>
+
+            <!-- Contact / CTA -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="mailto:info@themallu.online" class="flex items-center gap-2 px-8 py-3 bg-brand-primary text-white rounded-xl font-semibold hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/30">
+                    <i data-feather="mail" class="w-4 h-4"></i>
+                    Contact Support
+                </a>
+                <a href="#" class="px-8 py-3 bg-white text-slate-700 border border-slate-200 rounded-xl font-semibold hover:border-brand-primary hover:text-brand-primary transition-all">
+                    Check Status
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 text-center text-slate-400 text-sm">
+        <p>&copy; <span id="year"></span> Mallu Finance. Licensed Financial Partner.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
